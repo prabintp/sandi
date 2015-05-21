@@ -9,7 +9,25 @@ require.config({
     'angular-route': '../../bower_components/angular-route/angular-route',
     'angular-sanitize': '../../bower_components/angular-sanitize/angular-sanitize',
     'angular-touch': '../../bower_components/angular-touch/angular-touch',
-    bootstrap: '../../bower_components/bootstrap/dist/js/bootstrap'
+    bootstrap: '../../bower_components/bootstrap/dist/js/bootstrap',
+    'jquery':'../js/jquery.min',
+    'jqueryEasing':'../js/jquery.easing.1.3.min',
+    'jqueryForm':'../js/jquery.form',
+    'jqueryValidate':'../js/jquery.validate.min',
+    'bootstrap':'../js/bootstrap.min',
+    'bootstrapHover':'../js/bootstrap-hover-dropdown.min',
+    'skrollr':'../js/skrollr.min',
+    'skrollrStyle':'../js/skrollr.stylesheets.min',
+    'waypoints':'../js/waypoints.min',
+    'waypointSticky':'../js/waypoints-sticky.min',
+    'owl':'../js/owl.carousel.min',
+    'isotope':'../js/jquery.isotope.min',
+    'easytabs':'../js/jquery.easytabs.min',
+    'googleMap':'../js/google.maps.api.v3',
+    'buggy':'../js/viewport-units-buggyfill',
+    'scriptLocal':'../js/scripts',
+    'switch':'../switchstylesheet/switchstylesheet'
+
   },
   shim: {
     angular: {
@@ -33,12 +51,50 @@ require.config({
     'angular-touch': [
       'angular'
     ],
+    'switch': [
+    'jquery'
+    ],
+    'skrollr': {
+      deps:['jquery'],
+      exports:'skrollr'
+    },
+    'owl': [
+    'jquery'
+    ],
+    'bootstrapHover': [
+    'bootstrap','jquery'
+    ],
+    'jqueryValidate': [
+    'jquery'
+    ],
+    'bootstrap': [
+    'jquery'
+    ],
+    'buggy': [
+    'jquery'
+    ],
+    'isotope': [
+    'jquery'
+    ],
+    'easytabs': [
+    'jquery'
+    ],
+    'googleMap': [
+    'jquery'
+    ],
+    'jqueryEasing':{
+      deps: [
+      'jquery'
+      ],
+      exports: 'jqueryEasing'
+    },
     'angular-mocks': {
       deps: [
         'angular'
       ],
       exports: 'angular.mock'
     }
+
   },
   priority: [
     'angular'
@@ -59,7 +115,25 @@ require([
   'angular-sanitize',
   'angular-resource',
   'angular-animate',
-  'angular-touch'
+  'angular-touch',
+  'jquery',
+  'jqueryEasing',
+  'jqueryForm',
+  'jqueryValidate',
+  'bootstrap',
+  'bootstrapHover',
+  'skrollr',
+  'skrollrStyle',
+  'waypoints',
+  'waypointSticky',
+  'owl',
+  'isotope',
+  'easytabs',
+  'googleMap',
+  'buggy',
+  'switch'
+
+
 ], function(angular, app, ngRoutes, ngCookies, ngSanitize, ngResource, ngAnimate, ngTouch) {
   'use strict';
   /* jshint ignore:start */

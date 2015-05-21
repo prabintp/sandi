@@ -1,37 +1,24 @@
-var http = require("http"),
-    url = require("url"),
-    path = require("path"),
-    fs = require("fs"),
-    port = process.argv[2] || 8888;
+/**
+* Static HTTP Server
+*
+* Create a static file server instance to serve files
+* and folder in the './public' folder
+*/
 
-http.createServer(function(request, response) {
+// modules
+var static = require( 'node-static' ),
+port = 8060,
+http = require( 'http' );
 
-  var uri = url.parse(request.url).pathname
-    , filename = path.join(process.cwd(), uri);
+// config
+var file = new static.Server( './', {
+  cache: 3600,
+  gzip: true
+} );
 
-  path.exists(filename, function(exists) {
-    if(!exists) {
-      response.writeHead(404, {"Content-Type": "text/plain"});
-      response.write("404 Not Found\n");
-      response.end();
-      return;
-    }
-
-    if (fs.statSync(filename).isDirectory()) filename += 'app/index.html';
-
-    fs.readFile(filename, "binary", function(err, file) {
-      if(err) {        
-        response.writeHead(500, {"Content-Type": "text/plain"});
-        response.write(err + "\n");
-        response.end();
-        return;
-      }
-
-      response.writeHead(200);
-      response.write(file, "binary");
-      response.end();
-    });
-  });
-}).listen(parseInt(port, 10));
-
-console.log("Static file server running at\n  => http://localhost:" + port + "/\nCTRL + C to shutdown");
+// serve
+http.createServer( function ( request, response ) {
+  request.addListener( 'end', function () {
+    file.serve( request, response );
+  } ).resume();
+} ).listen( port );
