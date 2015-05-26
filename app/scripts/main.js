@@ -131,6 +131,7 @@ require([
   'easytabs',
   'googleMap',
   'buggy',
+  'scriptLocal',
   'switch'
 
 
