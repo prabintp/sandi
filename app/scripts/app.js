@@ -1,5 +1,5 @@
 /*jshint unused: vars */
-define(['angular', 'controllers/main', 'controllers/about']/*deps*/, function (angular, MainCtrl, AboutCtrl)/*invoke*/ {
+define(['angular', 'controllers/main', 'controllers/about', 'services/googleapi']/*deps*/, function (angular, MainCtrl, AboutCtrl, GoogleAPIService)/*invoke*/ {
   'use strict';
 
   /**
@@ -13,6 +13,7 @@ define(['angular', 'controllers/main', 'controllers/about']/*deps*/, function (a
   return angular
     .module('protoApp', ['protoApp.controllers.MainCtrl',
 'protoApp.controllers.AboutCtrl',
+'protoApp.services.GoogleAPI',
 /*angJSDeps*/
     'ngCookies',
     'ngResource',

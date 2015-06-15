@@ -9,8 +9,13 @@ define(['angular','skrollr'], function (angular,skrollr) {
    * Controller of the protoApp
    */
   angular.module('protoApp.controllers.MainCtrl', [])
-    .controller('MainCtrl', function ($scope) {
+    .controller('MainCtrl', function ($scope,GoogleAPI) {
       console.log('out123');
+	GoogleAPI.get().then(function(data){
+			console.log(JSON.stringify(data.feed.entry[1].title)+'dfd');
+			$scope.albums = data.feed.entry;
+			$scope.homeSlider = $scope.albums[1];
+		});
       $scope.$on('$viewContentLoaded', function() {
         console.log('fdgdfgdfgdf123');
         init(skrollr);
