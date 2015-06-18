@@ -63,6 +63,9 @@ require.config({
 'owl': [
     'jquery'
     ],
+'scriptLocal': [
+    'jquery'
+    ],
     'bootstrapHover': [
     'bootstrap','jquery'
     ],
