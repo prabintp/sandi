@@ -7,13 +7,8 @@
 	
     
     <div data-owl-carousel="" id="owl-main" class="owl-carousel owl-main height-lg owl-inner-nav owl-ui-lg" data-options="">
-      <div owl-carousel-item="" ng-repeat="item in homeSlider" style="background-image: url({{item.content.src}});" class="item">
+      <div owl-carousel-item="" ng-repeat="item in homeSlider" style="background-image: url({{item.content.src | changepxl:1200}});" class="item">
         <div class="container">
-        
-        </div>
-      </div>
-    </div>
-    </div>
 
 </section>
   <section id="hero">
@@ -27,7 +22,7 @@
 
            
             <div class="fadeInDown-2">
-               <h1 class="fadeInDown-1 dark-color">ytystytrytrSKETCHES IN LIGHT {{items.name}} </h1>
+               <h1 class="fadeInDown-1 dark-color">SKETCHES IN LIGHT {{items.name}} </h1>
             </div><!-- /.fadeIn -->
 
           </div><!-- /.caption -->
@@ -72,7 +67,7 @@
       <div class="row">
         <div class="col-md-8 col-sm-9 center-block text-center">
           <header>
-            <h1>Wedding Photographydfhgdfhdg</h1>
+            <h1>Wedding Photography</h1>
             <p>addictionweddings is a professional photography team in Kerala we are creating behind the scenes memories that will last a lifetime. be always sketch its absolute best.</p>
           </header>
         </div><!-- /.col -->
