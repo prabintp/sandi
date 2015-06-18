@@ -1,7 +1,9 @@
 {
   "name": "proto",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "ng-repeat-owl-carousel": "0.0.2"
+  },
   "repository": {},
   "devDependencies": {
     "grunt": "^0.4.5",

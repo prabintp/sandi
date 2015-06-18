@@ -11,18 +11,43 @@ define(['angular','skrollr'], function (angular,skrollr) {
   angular.module('protoApp.controllers.MainCtrl', [])
     .controller('MainCtrl', function ($scope,GoogleAPI) {
       console.log('out123');
+	//$scope.homeSlider = "[{name:'John', age:25, gender:'boy'},{name:'Jessie', age:30, gender:'girl'},{name:'Johanna', age:28, gender:'girl'}]";
 	GoogleAPI.get().then(function(data){
 			console.log(JSON.stringify(data.feed.entry[1].title)+'dfd');
 			$scope.albums = data.feed.entry;
-			$scope.homeSlider = $scope.albums[1];
+			
 		});
+	
       $scope.$on('$viewContentLoaded', function() {
         console.log('fdgdfgdfgdf123');
         init(skrollr);
-      });
 
 
+	GoogleAPI.getHomeSlider().then(function(data){
+			//console.log(JSON.stringify(data.feed.entry)+'dfd');
+			$scope.homeSlider = data.feed.entry;
+			
+		});	
 
+
+	 $scope.items1 = [1,2,3,4,5];
+  $scope.items2 = [1,2,3,4,5,6,7,8,9,10];
+		
+      $scope.members = []
+ 
+      $scope.carouselInitializer = function() {
+        $(".owl-test").owlCarousel({
+          items: 3,
+          navigation: true,
+          pagination: false,
+          navigationText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"]
+        });
+      };
+	
+      });//end controller
+
+
+	
 
       var init = function(skrollr){
 
@@ -86,7 +111,7 @@ define(['angular','skrollr'], function (angular,skrollr) {
         $(document).ready(function () {
 
           var dragging = true;
-          var owlElementID = "#owl-main";
+          var owlElementID = "#owl-main34";
 
           function fadeInReset() {
             if (!dragging) {

@@ -1,5 +1,5 @@
 /*jshint unused: vars */
-define(['angular', 'controllers/main', 'controllers/about', 'services/googleapi']/*deps*/, function (angular, MainCtrl, AboutCtrl, GoogleAPIService)/*invoke*/ {
+define(['angular', 'controllers/main', 'controllers/about', 'services/googleapi', 'directives/main']/*deps*/, function (angular, MainCtrl, AboutCtrl, GoogleAPIService, MainDirective)/*invoke*/ {
   'use strict';
 
   /**
@@ -14,6 +14,7 @@ define(['angular', 'controllers/main', 'controllers/about', 'services/googleapi'
     .module('protoApp', ['protoApp.controllers.MainCtrl',
 'protoApp.controllers.AboutCtrl',
 'protoApp.services.GoogleAPI',
+'protoApp.directives.Main',
 /*angJSDeps*/
     'ngCookies',
     'ngResource',
@@ -21,6 +22,7 @@ define(['angular', 'controllers/main', 'controllers/about', 'services/googleapi'
     'ngRoute',
     'ngAnimate',
     'ngTouch'
+    
   ])
     .config(function ($routeProvider) {
       $routeProvider

@@ -9,6 +9,7 @@ require.config({
     'angular-route': '../../bower_components/angular-route/angular-route',
     'angular-sanitize': '../../bower_components/angular-sanitize/angular-sanitize',
     'angular-touch': '../../bower_components/angular-touch/angular-touch',
+  
     bootstrap: '../../bower_components/bootstrap/dist/js/bootstrap',
     'jquery':'../js/jquery.min',
     'jqueryEasing':'../js/jquery.easing.1.3.min',
@@ -58,7 +59,8 @@ require.config({
       deps:['jquery'],
       exports:'skrollr'
     },
-    'owl': [
+   
+'owl': [
     'jquery'
     ],
     'bootstrapHover': [
@@ -133,6 +135,7 @@ require([
   'buggy',
   'scriptLocal',
   'switch'
+  
 
 
 ], function(angular, app, ngRoutes, ngCookies, ngSanitize, ngResource, ngAnimate, ngTouch) {

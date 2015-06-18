@@ -2,16 +2,32 @@
 
   <!-- ============================================================= SECTION – HERO ============================================================= -->
 
+
   <section id="hero">
-    <div id="owl-main" class="owl-carousel height-lg owl-inner-nav owl-ui-lg">
+	
+    
+    <div data-owl-carousel="" id="owl-main" class="owl-carousel owl-main height-lg owl-inner-nav owl-ui-lg" data-options="">
+      <div owl-carousel-item="" ng-repeat="item in homeSlider" style="background-image: url({{item.content.src}});" class="item">
+        <div class="container">
+        
+        </div>
+      </div>
+    </div>
+    </div>
+
+</section>
+  <section id="hero">
+ 
+    <div id="owl-main1" class="owl-carousel height-lg owl-inner-nav owl-ui-lg">
 
       <div class="item" style="background-image: url(images/art/01.jpg);">
+	{{items.name}}
         <div class="container">
           <div class="caption vertical-center text-center">
 
            
             <div class="fadeInDown-2">
-               <h1 class="fadeInDown-1 dark-color">SKETCHES IN LIGHT</h1>
+               <h1 class="fadeInDown-1 dark-color">ytystytrytrSKETCHES IN LIGHT {{items.name}} </h1>
             </div><!-- /.fadeIn -->
 
           </div><!-- /.caption -->
@@ -21,26 +37,26 @@
       <div class="item" style="background-image: url(images/art/02.jpg);">
         <div class="container">
          
-        </div><!-- /.container -->
-      </div><!-- /.item -->
+        </div>
+      </div>
 
       <div class="item" style="background-image: url(images/art/03.jpg);">
         <div class="container">
           
-        </div><!-- /.container -->
-      </div><!-- /.item -->
+        </div>
+      </div>
 
       <div class="item" style="background-image: url(images/art/04.jpg);">
         <div class="container">
          
-        </div><!-- /.container -->
-      </div><!-- /.item -->
+        </div>
+      </div>
 
       <div class="item" style="background-image: url(images/art/05.jpg);">
         <div class="container">
          
-        </div><!-- /.container -->
-      </div><!-- /.item -->
+        </div>
+      </div>
 
     </div><!-- /.owl-carousel -->
   </section>
@@ -56,7 +72,7 @@
       <div class="row">
         <div class="col-md-8 col-sm-9 center-block text-center">
           <header>
-            <h1>Wedding Photography</h1>
+            <h1>Wedding Photographydfhgdfhdg</h1>
             <p>addictionweddings is a professional photography team in Kerala we are creating behind the scenes memories that will last a lifetime. be always sketch its absolute best.</p>
           </header>
         </div><!-- /.col -->
