@@ -1,4 +1,4 @@
-define(['angular','skrollr'], function (angular,skrollr) {
+define(['angular', 'skrollr'], function(angular, skrollr) {
   'use strict';
 
   /**
@@ -9,47 +9,53 @@ define(['angular','skrollr'], function (angular,skrollr) {
    * Controller of the protoApp
    */
   angular.module('protoApp.controllers.MainCtrl', [])
-    .controller('MainCtrl', function ($scope,GoogleAPI) {
+    .controller('MainCtrl', function($scope, GoogleAPI, $rootScope) {
       console.log('out123');
-	//$scope.homeSlider = "[{name:'John', age:25, gender:'boy'},{name:'Jessie', age:30, gender:'girl'},{name:'Johanna', age:28, gender:'girl'}]";
-	GoogleAPI.get().then(function(data){
-			console.log(JSON.stringify(data.feed.entry[1].title)+'dfd');
-			$scope.albums = data.feed.entry;
-			
-		});
-	
+      //$scope.homeSlider = "[{name:'John', age:25, gender:'boy'},{name:'Jessie', age:30, gender:'girl'},{name:'Johanna', age:28, gender:'girl'}]";
+      GoogleAPI.get().then(function(data) {
+        console.log(JSON.stringify(data.feed.entry[1].title) + 'dfd');
+        $rootScope.albums = data.feed.entry;
+        console.log($rootScope.albums);
+      });
+
+
+      $scope.videos = "[{vid:'_pb89fUMZGg',eventType:'Wedding Highlights',name:'Megha + Vaishakh',desc:'Megha Vaishakh Wedding Highlights by addiction weddings',eventDate:''},{vid:'daEyFzfF8pk',eventType:'marriage',name:'',desc:'',eventDate:''}]";
+      $scope.videoSelected = $scope.videos[1];
       $scope.$on('$viewContentLoaded', function() {
-        console.log('fdgdfgdfgdf123');
+        setTimeout(function() {
+          commonInit();
+        }, 0);
+
         init(skrollr);
 
 
-	GoogleAPI.getHomeSlider().then(function(data){
-			//console.log(JSON.stringify(data.feed.entry)+'dfd');
-			$scope.homeSlider = data.feed.entry;
-			
-		});	
+        GoogleAPI.getHomeSlider().then(function(data) {
+          //console.log(JSON.stringify(data.feed.entry)+'dfd');
+          $scope.homeSlider = data.feed.entry;
 
-
-	 $scope.items1 = [1,2,3,4,5];
-  $scope.items2 = [1,2,3,4,5,6,7,8,9,10];
-		
-      $scope.members = []
- 
-      $scope.carouselInitializer = function() {
-        $(".owl-test").owlCarousel({
-          items: 3,
-          navigation: true,
-          pagination: false,
-          navigationText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"]
         });
-      };
-	
-      });//end controller
 
 
-	
+        $scope.items1 = [1, 2, 3, 4, 5];
+        $scope.items2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-      var init = function(skrollr){
+        $scope.members = []
+
+        $scope.carouselInitializer = function() {
+          $(".owl-test").owlCarousel({
+            items: 3,
+            navigation: true,
+            pagination: false,
+            navigationText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"]
+          });
+        };
+
+      }); //end controller
+
+
+
+
+      var init = function(skrollr) {
 
 
 
@@ -71,8 +77,7 @@ define(['angular','skrollr'], function (angular,skrollr) {
             if ($(window).width() < 1024 && sActive) {
               s.init().destroy();
               sActive = false;
-            }
-            else if ($(window).width() > 1024) {
+            } else if ($(window).width() > 1024) {
               s.init();
               sActive = true;
             }
@@ -94,7 +99,7 @@ define(['angular','skrollr'], function (angular,skrollr) {
         /*	DROPDOWN ON HOVER (NAVIGATION)
         /*===================================================================================*/
 
-        $(document).ready(function () {
+        $(document).ready(function() {
 
           $('.js-activated').dropdownHover({
             instantlyCloseOthers: false,
@@ -108,84 +113,209 @@ define(['angular','skrollr'], function (angular,skrollr) {
         /*	OWL CAROUSEL
         /*===================================================================================*/
 
-        $(document).ready(function () {
+        $(document).ready(function() {
 
           var dragging = true;
           var owlElementID = "#owl-main34";
 
           function fadeInReset() {
             if (!dragging) {
-              $(owlElementID + " .caption .fadeIn-1, " + owlElementID + " .caption .fadeIn-2, " + owlElementID + " .caption .fadeIn-3").stop().delay(800).animate({ opacity: 0 }, { duration: 400, easing: "easeInCubic" });
-            }
-            else {
-              $(owlElementID + " .caption .fadeIn-1, " + owlElementID + " .caption .fadeIn-2, " + owlElementID + " .caption .fadeIn-3").css({ opacity: 0 });
+              $(owlElementID + " .caption .fadeIn-1, " + owlElementID + " .caption .fadeIn-2, " + owlElementID + " .caption .fadeIn-3").stop().delay(800).animate({
+                opacity: 0
+              }, {
+                duration: 400,
+                easing: "easeInCubic"
+              });
+            } else {
+              $(owlElementID + " .caption .fadeIn-1, " + owlElementID + " .caption .fadeIn-2, " + owlElementID + " .caption .fadeIn-3").css({
+                opacity: 0
+              });
             }
           }
 
           function fadeInDownReset() {
             if (!dragging) {
-              $(owlElementID + " .caption .fadeInDown-1, " + owlElementID + " .caption .fadeInDown-2, " + owlElementID + " .caption .fadeInDown-3").stop().delay(800).animate({ opacity: 0, top: "-15px" }, { duration: 400, easing: "easeInCubic" });
-            }
-            else {
-              $(owlElementID + " .caption .fadeInDown-1, " + owlElementID + " .caption .fadeInDown-2, " + owlElementID + " .caption .fadeInDown-3").css({ opacity: 0, top: "-15px" });
+              $(owlElementID + " .caption .fadeInDown-1, " + owlElementID + " .caption .fadeInDown-2, " + owlElementID + " .caption .fadeInDown-3").stop().delay(800).animate({
+                opacity: 0,
+                top: "-15px"
+              }, {
+                duration: 400,
+                easing: "easeInCubic"
+              });
+            } else {
+              $(owlElementID + " .caption .fadeInDown-1, " + owlElementID + " .caption .fadeInDown-2, " + owlElementID + " .caption .fadeInDown-3").css({
+                opacity: 0,
+                top: "-15px"
+              });
             }
           }
 
           function fadeInUpReset() {
             if (!dragging) {
-              $(owlElementID + " .caption .fadeInUp-1, " + owlElementID + " .caption .fadeInUp-2, " + owlElementID + " .caption .fadeInUp-3").stop().delay(800).animate({ opacity: 0, top: "15px" }, { duration: 400, easing: "easeInCubic" });
-            }
-            else {
-              $(owlElementID + " .caption .fadeInUp-1, " + owlElementID + " .caption .fadeInUp-2, " + owlElementID + " .caption .fadeInUp-3").css({ opacity: 0, top: "15px" });
+              $(owlElementID + " .caption .fadeInUp-1, " + owlElementID + " .caption .fadeInUp-2, " + owlElementID + " .caption .fadeInUp-3").stop().delay(800).animate({
+                opacity: 0,
+                top: "15px"
+              }, {
+                duration: 400,
+                easing: "easeInCubic"
+              });
+            } else {
+              $(owlElementID + " .caption .fadeInUp-1, " + owlElementID + " .caption .fadeInUp-2, " + owlElementID + " .caption .fadeInUp-3").css({
+                opacity: 0,
+                top: "15px"
+              });
             }
           }
 
           function fadeInLeftReset() {
             if (!dragging) {
-              $(owlElementID + " .caption .fadeInLeft-1, " + owlElementID + " .caption .fadeInLeft-2, " + owlElementID + " .caption .fadeInLeft-3").stop().delay(800).animate({ opacity: 0, left: "15px" }, { duration: 400, easing: "easeInCubic" });
-            }
-            else {
-              $(owlElementID + " .caption .fadeInLeft-1, " + owlElementID + " .caption .fadeInLeft-2, " + owlElementID + " .caption .fadeInLeft-3").css({ opacity: 0, left: "15px" });
+              $(owlElementID + " .caption .fadeInLeft-1, " + owlElementID + " .caption .fadeInLeft-2, " + owlElementID + " .caption .fadeInLeft-3").stop().delay(800).animate({
+                opacity: 0,
+                left: "15px"
+              }, {
+                duration: 400,
+                easing: "easeInCubic"
+              });
+            } else {
+              $(owlElementID + " .caption .fadeInLeft-1, " + owlElementID + " .caption .fadeInLeft-2, " + owlElementID + " .caption .fadeInLeft-3").css({
+                opacity: 0,
+                left: "15px"
+              });
             }
           }
 
           function fadeInRightReset() {
             if (!dragging) {
-              $(owlElementID + " .caption .fadeInRight-1, " + owlElementID + " .caption .fadeInRight-2, " + owlElementID + " .caption .fadeInRight-3").stop().delay(800).animate({ opacity: 0, left: "-15px" }, { duration: 400, easing: "easeInCubic" });
-            }
-            else {
-              $(owlElementID + " .caption .fadeInRight-1, " + owlElementID + " .caption .fadeInRight-2, " + owlElementID + " .caption .fadeInRight-3").css({ opacity: 0, left: "-15px" });
+              $(owlElementID + " .caption .fadeInRight-1, " + owlElementID + " .caption .fadeInRight-2, " + owlElementID + " .caption .fadeInRight-3").stop().delay(800).animate({
+                opacity: 0,
+                left: "-15px"
+              }, {
+                duration: 400,
+                easing: "easeInCubic"
+              });
+            } else {
+              $(owlElementID + " .caption .fadeInRight-1, " + owlElementID + " .caption .fadeInRight-2, " + owlElementID + " .caption .fadeInRight-3").css({
+                opacity: 0,
+                left: "-15px"
+              });
             }
           }
 
           function fadeIn() {
-            $(owlElementID + " .active .caption .fadeIn-1").stop().delay(500).animate({ opacity: 1 }, { duration: 800, easing: "easeOutCubic" });
-            $(owlElementID + " .active .caption .fadeIn-2").stop().delay(700).animate({ opacity: 1 }, { duration: 800, easing: "easeOutCubic" });
-            $(owlElementID + " .active .caption .fadeIn-3").stop().delay(1000).animate({ opacity: 1 }, { duration: 800, easing: "easeOutCubic" });
+            $(owlElementID + " .active .caption .fadeIn-1").stop().delay(500).animate({
+              opacity: 1
+            }, {
+              duration: 800,
+              easing: "easeOutCubic"
+            });
+            $(owlElementID + " .active .caption .fadeIn-2").stop().delay(700).animate({
+              opacity: 1
+            }, {
+              duration: 800,
+              easing: "easeOutCubic"
+            });
+            $(owlElementID + " .active .caption .fadeIn-3").stop().delay(1000).animate({
+              opacity: 1
+            }, {
+              duration: 800,
+              easing: "easeOutCubic"
+            });
           }
 
           function fadeInDown() {
-            $(owlElementID + " .active .caption .fadeInDown-1").stop().delay(500).animate({ opacity: 1, top: "0" }, { duration: 800, easing: "easeOutCubic" });
-            $(owlElementID + " .active .caption .fadeInDown-2").stop().delay(700).animate({ opacity: 1, top: "0" }, { duration: 800, easing: "easeOutCubic" });
-            $(owlElementID + " .active .caption .fadeInDown-3").stop().delay(1000).animate({ opacity: 1, top: "0" }, { duration: 800, easing: "easeOutCubic" });
+            $(owlElementID + " .active .caption .fadeInDown-1").stop().delay(500).animate({
+              opacity: 1,
+              top: "0"
+            }, {
+              duration: 800,
+              easing: "easeOutCubic"
+            });
+            $(owlElementID + " .active .caption .fadeInDown-2").stop().delay(700).animate({
+              opacity: 1,
+              top: "0"
+            }, {
+              duration: 800,
+              easing: "easeOutCubic"
+            });
+            $(owlElementID + " .active .caption .fadeInDown-3").stop().delay(1000).animate({
+              opacity: 1,
+              top: "0"
+            }, {
+              duration: 800,
+              easing: "easeOutCubic"
+            });
           }
 
           function fadeInUp() {
-            $(owlElementID + " .active .caption .fadeInUp-1").stop().delay(500).animate({ opacity: 1, top: "0" }, { duration: 800, easing: "easeOutCubic" });
-            $(owlElementID + " .active .caption .fadeInUp-2").stop().delay(700).animate({ opacity: 1, top: "0" }, { duration: 800, easing: "easeOutCubic" });
-            $(owlElementID + " .active .caption .fadeInUp-3").stop().delay(1000).animate({ opacity: 1, top: "0" }, { duration: 800, easing: "easeOutCubic" });
+            $(owlElementID + " .active .caption .fadeInUp-1").stop().delay(500).animate({
+              opacity: 1,
+              top: "0"
+            }, {
+              duration: 800,
+              easing: "easeOutCubic"
+            });
+            $(owlElementID + " .active .caption .fadeInUp-2").stop().delay(700).animate({
+              opacity: 1,
+              top: "0"
+            }, {
+              duration: 800,
+              easing: "easeOutCubic"
+            });
+            $(owlElementID + " .active .caption .fadeInUp-3").stop().delay(1000).animate({
+              opacity: 1,
+              top: "0"
+            }, {
+              duration: 800,
+              easing: "easeOutCubic"
+            });
           }
 
           function fadeInLeft() {
-            $(owlElementID + " .active .caption .fadeInLeft-1").stop().delay(500).animate({ opacity: 1, left: "0" }, { duration: 800, easing: "easeOutCubic" });
-            $(owlElementID + " .active .caption .fadeInLeft-2").stop().delay(700).animate({ opacity: 1, left: "0" }, { duration: 800, easing: "easeOutCubic" });
-            $(owlElementID + " .active .caption .fadeInLeft-3").stop().delay(1000).animate({ opacity: 1, left: "0" }, { duration: 800, easing: "easeOutCubic" });
+            $(owlElementID + " .active .caption .fadeInLeft-1").stop().delay(500).animate({
+              opacity: 1,
+              left: "0"
+            }, {
+              duration: 800,
+              easing: "easeOutCubic"
+            });
+            $(owlElementID + " .active .caption .fadeInLeft-2").stop().delay(700).animate({
+              opacity: 1,
+              left: "0"
+            }, {
+              duration: 800,
+              easing: "easeOutCubic"
+            });
+            $(owlElementID + " .active .caption .fadeInLeft-3").stop().delay(1000).animate({
+              opacity: 1,
+              left: "0"
+            }, {
+              duration: 800,
+              easing: "easeOutCubic"
+            });
           }
 
           function fadeInRight() {
-            $(owlElementID + " .active .caption .fadeInRight-1").stop().delay(500).animate({ opacity: 1, left: "0" }, { duration: 800, easing: "easeOutCubic" });
-            $(owlElementID + " .active .caption .fadeInRight-2").stop().delay(700).animate({ opacity: 1, left: "0" }, { duration: 800, easing: "easeOutCubic" });
-            $(owlElementID + " .active .caption .fadeInRight-3").stop().delay(1000).animate({ opacity: 1, left: "0" }, { duration: 800, easing: "easeOutCubic" });
+            $(owlElementID + " .active .caption .fadeInRight-1").stop().delay(500).animate({
+              opacity: 1,
+              left: "0"
+            }, {
+              duration: 800,
+              easing: "easeOutCubic"
+            });
+            $(owlElementID + " .active .caption .fadeInRight-2").stop().delay(700).animate({
+              opacity: 1,
+              left: "0"
+            }, {
+              duration: 800,
+              easing: "easeOutCubic"
+            });
+            $(owlElementID + " .active .caption .fadeInRight-3").stop().delay(1000).animate({
+              opacity: 1,
+              left: "0"
+            }, {
+              duration: 800,
+              easing: "easeOutCubic"
+            });
           }
 
           $(owlElementID).owlCarousel({
@@ -196,7 +326,7 @@ define(['angular','skrollr'], function (angular,skrollr) {
             pagination: true,
             singleItem: true,
             addClassActive: true,
-            transitionStyle: "fade",
+            transitionStyle: "fadeUp",
             navigationText: ["<i class='icon-left-open-mini'></i>", "<i class='icon-right-open-mini'></i>"],
 
             afterInit: function() {
@@ -248,7 +378,7 @@ define(['angular','skrollr'], function (angular,skrollr) {
             pagination: false
           });
 
-          $('#transitionType li a').click(function () {
+          $('#transitionType li a').click(function() {
 
             $('#transitionType li a').removeClass('active');
             $(this).addClass('active');
@@ -411,373 +541,292 @@ define(['angular','skrollr'], function (angular,skrollr) {
             navigationText: ["<i class='icon-left-open-mini'></i>", "<i class='icon-right-open-mini'></i>"]
           });
 
-          $(".slider-next").click(function () {
+          $(".slider-next").click(function() {
             owl.trigger('owl.next');
           })
 
-          $(".slider-prev").click(function () {
+          $(".slider-prev").click(function() {
             owl.trigger('owl.prev');
           })
 
         });
 
 
+
+
+
         /*===================================================================================*/
-        /*	ANIMATIONS ON SCROLL
+        /*	ISOTOPE PORTFOLIO FULLSCREEN
         /*===================================================================================*/
 
         $(document).ready(function() {
-          /*var waypointClass = '[class*="animate"]';
-          $(waypointClass).css({opacity: '0'});
 
-          $(waypointClass).waypoint(function() {
-          var animationClass = $(this).attr('class').split('animate-')[1];
-          var delayTime = $(this).data('delay');
-          $(this).delay(delayTime).queue(function(next){
-          $(this).toggleClass('animated');
-          $(this).toggleClass(animationClass);
-          next();
+          var isotopeBreakpoints = [
+
+            {
+              // Desktop
+              min_width: 1680,
+              columns: 6
+            },
+
+            {
+              // iPad Landscape
+              min_width: 1140,
+              max_width: 1680,
+              columns: 5
+            },
+
+            {
+              // iPad Portrait
+              min_width: 1024,
+              max_width: 1440,
+              columns: 4
+            },
+
+            {
+              // iPhone Landscape
+              min_width: 768,
+              max_width: 1024,
+              columns: 3
+            },
+
+            {
+              // iPhone Portrait
+              max_width: 768,
+              columns: 1
+            }
+
+          ];
+
+          var $container = $('.items.fullscreen');
+
+          $container.imagesLoaded(function() {
+            $container.isotope({
+              itemSelector: '.item'
+            });
+          });
+
+          // hook to resize the portfolio items for fluidity / responsiveness
+          $(window).smartresize(function() {
+            var windowWidth = $(window).width();
+            var windowHeight = $(window).height();
+
+            for (var i = 0; i < isotopeBreakpoints.length; i++) {
+              if (windowWidth >= isotopeBreakpoints[i].min_width || !isotopeBreakpoints[i].min_width) {
+                if (windowWidth < isotopeBreakpoints[i].max_width || !isotopeBreakpoints[i].max_width) {
+                  $container.find('.item').each(function() {
+                    $(this).width(Math.floor($container.width() / isotopeBreakpoints[i].columns));
+                  });
+
+                  break;
+                }
+              }
+            }
+          });
+
+          $(window).trigger('smartresize');
+
         });
-      },
-      {
-      offset: '90%',
-      triggerOnce: true
-    });*/
-
-    var waypointClass = 'main [class*="col-"]';
-    var animationClass = 'fadeInUp';
-    var delayTime;
-    $(waypointClass).css({opacity: '0'});
-
-    $(waypointClass).waypoint(function() {
-      delayTime += 100;
-      $(this).delay(delayTime).queue(function(next){
-        $(this).toggleClass('animated');
-        $(this).toggleClass(animationClass);
-        delayTime = 0;
-        next();
-      });
-    },
-    {
-      offset: '90%',
-      triggerOnce: true
-    });
-  });
 
 
-  /*===================================================================================*/
-  /*	ISOTOPE PORTFOLIO
-  /*===================================================================================*/
+        /*===================================================================================*/
+        /*	ISOTOPE BLOG
+        /*===================================================================================*/
 
-  $(document).ready(function () {
+        $(document).ready(function() {
 
-    var $container = $('.items');
+          var $container = $('.posts');
 
-    $container.imagesLoaded(function () {
-      $container.isotope({
-        itemSelector: '.item'
-      });
-    });
+          $container.imagesLoaded(function() {
+            $container.isotope({
+              itemSelector: '.post'
+            });
+          });
 
-    var resizeTimer;
+          $('.format-filter li a, .format-wrapper a').click(function() {
 
-    function resizeFunction() {
-      $container.isotope('reLayout');
-    }
+            var selector = $(this).attr('data-filter');
 
-    $(window).resize(function() {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(resizeFunction, 100);
-    });
-
-    $('.portfolio .filter li a').click(function () {
-
-      $('.portfolio .filter li a').removeClass('active');
-      $(this).addClass('active');
-
-      var selector = $(this).attr('data-filter');
-
-      $container.isotope({
-        filter: selector
-      });
-
-      return false;
-
-    });
-
-  });
-
-
-  /*===================================================================================*/
-  /*	ISOTOPE PORTFOLIO FULLSCREEN
-  /*===================================================================================*/
-
-  $(document).ready(function () {
-
-    var isotopeBreakpoints = [
-
-    {
-      // Desktop
-      min_width: 1680,
-      columns: 6
-    },
-
-    {
-      // iPad Landscape
-      min_width: 1140,
-      max_width: 1680,
-      columns: 5
-    },
-
-    {
-      // iPad Portrait
-      min_width: 1024,
-      max_width: 1440,
-      columns: 4
-    },
-
-    {
-      // iPhone Landscape
-      min_width: 768,
-      max_width: 1024,
-      columns: 3
-    },
-
-    {
-      // iPhone Portrait
-      max_width: 768,
-      columns: 1
-    }
-
-    ];
-
-    var $container = $('.items.fullscreen');
-
-    $container.imagesLoaded(function () {
-      $container.isotope({
-        itemSelector: '.item'
-      });
-    });
-
-    // hook to resize the portfolio items for fluidity / responsiveness
-    $(window).smartresize(function () {
-      var windowWidth = $(window).width();
-      var windowHeight = $(window).height();
-
-      for (var i = 0; i < isotopeBreakpoints.length; i++) {
-        if (windowWidth >= isotopeBreakpoints[i].min_width || !isotopeBreakpoints[i].min_width) {
-          if (windowWidth < isotopeBreakpoints[i].max_width || !isotopeBreakpoints[i].max_width) {
-            $container.find('.item').each(function () {
-              $(this).width(Math.floor($container.width() / isotopeBreakpoints[i].columns));
+            $container.isotope({
+              filter: selector
             });
 
-            break;
-          }
-        }
-      }
-    });
+            $('.format-filter li a').removeClass('active');
+            $('.format-filter li a[data-filter="' + selector + '"]').addClass('active');
 
-    $(window).trigger('smartresize');
+            $('html, body').animate({
+              scrollTop: $('.format-filter').offset().top - 130
+            }, 600);
 
-  });
+            return false;
 
+          });
 
-  /*===================================================================================*/
-  /*	ISOTOPE BLOG
-  /*===================================================================================*/
+          $(window).on('resize', function() {
+            $('.posts').isotope('reLayout')
+          });
 
-  $(document).ready(function () {
-
-    var $container = $('.posts');
-
-    $container.imagesLoaded(function () {
-      $container.isotope({
-        itemSelector: '.post'
-      });
-    });
-
-    $('.format-filter li a, .format-wrapper a').click(function () {
-
-      var selector = $(this).attr('data-filter');
-
-      $container.isotope({
-        filter: selector
-      });
-
-      $('.format-filter li a').removeClass('active');
-      $('.format-filter li a[data-filter="'+selector+'"]').addClass('active');
-
-      $('html, body').animate({
-        scrollTop: $('.format-filter').offset().top -130
-      }, 600);
-
-      return false;
-
-    });
-
-    $(window).on('resize', function () {
-      $('.posts').isotope('reLayout')
-    });
-
-  });
+        });
 
 
-  /*===================================================================================*/
-  /*	TABS
-  /*===================================================================================*/
+        /*===================================================================================*/
+        /*	TABS
+        /*===================================================================================*/
 
-  $(document).ready(function () {
+        $(document).ready(function() {
 
-    /*$('.tabs.tabs-services').easytabs({
-    cycle: 5000
+          /*$('.tabs.tabs-services').easytabs({
+          cycle: 5000
   });*/
 
-  $('.tabs.tabs-top, .tabs.tabs-circle-top, .tabs.tabs-2-big-top, .tabs.tabs-side').easytabs({
-    animationSpeed: 200,
-    updateHash: false
-  });
+          $('.tabs.tabs-top, .tabs.tabs-circle-top, .tabs.tabs-2-big-top, .tabs.tabs-side').easytabs({
+            animationSpeed: 200,
+            updateHash: false
+          });
 
-});
-
-
-/*===================================================================================*/
-/*	ACCORDION (FOR ISOTOPE HEIGHT CALCULATION)
-/*===================================================================================*/
-
-$(document).ready(function () {
-  if ($('.panel-group .portfolio').length > 0) {
-    $('.panel-group .collapse.in').collapse({
-      toggle: true
-    });
-  }
-});
-
-          
-      /*===================================================================================*/
-      /*	IMAGE HOVER
-      /*===================================================================================*/
-
-      $(document).ready(function () {
-        $('.icon-overlay a').prepend('<span class="icn-more"></span>');
-      });
-
-
-      /*===================================================================================*/
-      /*	DATA REL
-      /*===================================================================================*/
-
-      $(document).ready(function () {
-        $('a[data-rel]').each(function () {
-          $(this).attr('rel', $(this).data('rel'));
         });
-      });
 
 
-      /*===================================================================================*/
-      /*	TOOLTIP
-      /*===================================================================================*/
+        /*===================================================================================*/
+        /*	ACCORDION (FOR ISOTOPE HEIGHT CALCULATION)
+        /*===================================================================================*/
 
-      $(document).ready(function () {
-        if ($("[rel=tooltip]").length) {
-          $("[rel=tooltip]").tooltip();
-        }
-      });
-
-
-      /*===================================================================================*/
-      /*	GOOGLE MAPS
-      /*===================================================================================*/
-
-      $(document).ready(function () {
-
-        function initialize() {
-          var mapOptions = {
-            zoom: 13,
-            center: new google.maps.LatLng(40.7902778, -73.9597222),
-            disableDefaultUI: true
-          }
-          var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-        }
-
-        //google.maps.event.addDomListener(window, 'load', initialize);
-
-      });
-
-
-      /*===================================================================================*/
-      /*	CONVERTING iOS SAFARI VIEWPORT UNITS (BUGGY) INTO PIXELS
-      /*===================================================================================*/
-
-      $(document).ready(function () {
-        //window.viewportUnitsBuggyfill.init(true);
-      });
-
-
-      /*===================================================================================*/
-      /*	FORM VALIDATION
-      /*===================================================================================*/
-
-      $(document).ready(function() {
-
-        $('#contactform, #commentform').validate({
-
-          errorPlacement: function(error, element) {
-            $(element).attr({
-              'placeholder' : error.html()
+        $(document).ready(function() {
+          if ($('.panel-group .portfolio').length > 0) {
+            $('.panel-group .collapse.in').collapse({
+              toggle: true
             });
-          },
+          }
+        });
 
-          focusInvalid: false,
 
-          rules: {
-            name: {
-              required: true,
-              minlength: 2
-            },
-            email: {
-              required: true,
-              email: true
-            },
-            message: {
-              required: true,
-              minlength: 10
+        /*===================================================================================*/
+        /*	IMAGE HOVER
+        /*===================================================================================*/
+
+        $(document).ready(function() {
+          $('.icon-overlay a').prepend('<span class="icn-more"></span>');
+        });
+
+
+        /*===================================================================================*/
+        /*	DATA REL
+        /*===================================================================================*/
+
+        $(document).ready(function() {
+          $('a[data-rel]').each(function() {
+            $(this).attr('rel', $(this).data('rel'));
+          });
+        });
+
+
+        /*===================================================================================*/
+        /*	TOOLTIP
+        /*===================================================================================*/
+
+        $(document).ready(function() {
+          if ($("[rel=tooltip]").length) {
+            $("[rel=tooltip]").tooltip();
+          }
+        });
+
+
+        /*===================================================================================*/
+        /*	GOOGLE MAPS
+        /*===================================================================================*/
+
+        $(document).ready(function() {
+
+          function initialize() {
+            var mapOptions = {
+              zoom: 13,
+              center: new google.maps.LatLng(40.7902778, -73.9597222),
+              disableDefaultUI: true
             }
-          },
+            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+          }
 
-          messages: {
-            name: {
-              required: 'Please enter your name!',
-              minlength: jQuery.format('Name requires at least {0} characters!')
-            },
-            email: {
-              required: 'Please enter your email!',
-              email: 'Please enter a valid email!'
-            },
-            message: {
-              required: 'Please enter a message!',
-              minlength: jQuery.format('Message requires at least {0} characters!')
-            }
-          },
+          //google.maps.event.addDomListener(window, 'load', initialize);
 
-          submitHandler: function(form) {
-            $('#contactform .btn-submit').html('Sending message ...');
-            $('#commentform .btn-submit').html('Sending comment ...');
-            $(form).ajaxSubmit({
-              success: function(responseText, statusText, xhr, $form) {
-                $(form).delay(1300).slideUp('fast');
-                $('#response').html(responseText).hide().delay(1300).slideDown('fast');
+        });
+
+
+        /*===================================================================================*/
+        /*	CONVERTING iOS SAFARI VIEWPORT UNITS (BUGGY) INTO PIXELS
+        /*===================================================================================*/
+
+        $(document).ready(function() {
+          //window.viewportUnitsBuggyfill.init(true);
+        });
+
+
+        /*===================================================================================*/
+        /*	FORM VALIDATION
+        /*===================================================================================*/
+
+        $(document).ready(function() {
+
+          $('#contactform, #commentform').validate({
+
+            errorPlacement: function(error, element) {
+              $(element).attr({
+                'placeholder': error.html()
+              });
+            },
+
+            focusInvalid: false,
+
+            rules: {
+              name: {
+                required: true,
+                minlength: 2
+              },
+              email: {
+                required: true,
+                email: true
+              },
+              message: {
+                required: true,
+                minlength: 10
               }
-            });
-            return false;
-          }
+            },
+
+            messages: {
+              name: {
+                required: 'Please enter your name!',
+                minlength: jQuery.format('Name requires at least {0} characters!')
+              },
+              email: {
+                required: 'Please enter your email!',
+                email: 'Please enter a valid email!'
+              },
+              message: {
+                required: 'Please enter a message!',
+                minlength: jQuery.format('Message requires at least {0} characters!')
+              }
+            },
+
+            submitHandler: function(form) {
+              $('#contactform .btn-submit').html('Sending message ...');
+              $('#commentform .btn-submit').html('Sending comment ...');
+              $(form).ajaxSubmit({
+                success: function(responseText, statusText, xhr, $form) {
+                  $(form).delay(1300).slideUp('fast');
+                  $('#response').html(responseText).hide().delay(1300).slideDown('fast');
+                }
+              });
+              return false;
+            }
+
+          });
 
         });
 
-      });
-
-      $(document).ready(function(){
-        $(".changecolor").switchstylesheet( { seperator:"color"} );
-      });
+        $(document).ready(function() {
+          $(".changecolor").switchstylesheet({
+            seperator: "color"
+          });
+        });
 
 
 
