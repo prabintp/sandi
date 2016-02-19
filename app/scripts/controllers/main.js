@@ -549,6 +549,11 @@ define(['angular', 'skrollr'], function(angular, skrollr) {
             owl.trigger('owl.prev');
           })
 
+          $('#more-videos #content .item a').click(function() {
+            $('#videoFrame').attr('src', $(this).find('iframe').attr('src'));
+            $('#more-videos #accordion #content').collapse('toggle');
+          })
+
         });
 
 

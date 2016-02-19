@@ -1346,7 +1346,7 @@ aside .thumb figure {
 	width: 100%;
 /*	padding-top: 30px;8*/
 	padding-bottom: 30px;
-	border-bottom: 1px solid #E6E9ED;
+/*	border-bottom: 1px solid #E6E9ED;*/
 }
 .stuck {
 	position: fixed !important;
@@ -2770,8 +2770,8 @@ blockquote:before {
 .format-filter li {
     display: inline;
 	position: relative;
-	background: #FFF;
-	font-size: 15px;
+/*	background: #FFF;*/
+	font-size: 20px;
     font-weight: 700;
 	line-height: 150%;
 	letter-spacing: .031em;
@@ -2797,7 +2797,7 @@ blockquote:before {
 	border-color: #BCC7D1;
 }
 .light-bg .filter li {
-	background: #F2F5F7;
+/*	background: #F2F5F7;*/
 }
 .dark-bg .filter:before {
 	border-color: #73879C;
@@ -5741,7 +5741,7 @@ input:focus:-ms-input-placeholder {
 	.height-xs,
 	.height-sm,
 	#owl-main .item {
-		height: 580px;
+		height: 680px;
 	}
 
 	#hero h1 {
@@ -5781,7 +5781,7 @@ input:focus:-ms-input-placeholder {
 	#owl-main .item,
 	#owl-main.height-md .item,
 	#owl-main.height-lg .item {
-		height: 580px;
+		height: 680px;
 	}
 }
 
