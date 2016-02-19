@@ -9,25 +9,25 @@ require.config({
     'angular-route': '../../bower_components/angular-route/angular-route',
     'angular-sanitize': '../../bower_components/angular-sanitize/angular-sanitize',
     'angular-touch': '../../bower_components/angular-touch/angular-touch',
-  
+
     bootstrap: '../../bower_components/bootstrap/dist/js/bootstrap',
-    'jquery':'../js/jquery.min',
-    'jqueryEasing':'../js/jquery.easing.1.3.min',
-    'jqueryForm':'../js/jquery.form',
-    'jqueryValidate':'../js/jquery.validate.min',
-    'bootstrap':'../js/bootstrap.min',
-    'bootstrapHover':'../js/bootstrap-hover-dropdown.min',
-    'skrollr':'../js/skrollr.min',
-    'skrollrStyle':'../js/skrollr.stylesheets.min',
-    'waypoints':'../js/waypoints.min',
-    'waypointSticky':'../js/waypoints-sticky.min',
-    'owl':'../js/owl.carousel.min',
-    'isotope':'../js/jquery.isotope.min',
-    'easytabs':'../js/jquery.easytabs.min',
-    'googleMap':'../js/google.maps.api.v3',
-    'buggy':'../js/viewport-units-buggyfill',
-    'scriptLocal':'../js/scripts',
-    'switch':'../switchstylesheet/switchstylesheet'
+    'jquery': '../js/jquery.min',
+    'jqueryEasing': '../js/jquery.easing.1.3.min',
+    'jqueryForm': '../js/jquery.form',
+    'jqueryValidate': '../js/jquery.validate.min',
+    'bootstrap': '../js/bootstrap.min',
+    'bootstrapHover': '../js/bootstrap-hover-dropdown.min',
+    'skrollr': '../js/skrollr.min',
+    'skrollrStyle': '../js/skrollr.stylesheets.min',
+    'waypoints': '../js/waypoints.min',
+    'waypointSticky': '../js/waypoints-sticky.min',
+    'owl': '../js/owl.carousel.min',
+    'isotope': '../js/jquery.isotope.min',
+    'easytabs': '../js/jquery.easytabs.min',
+    'googleMap': '../js/google.maps.api.v3',
+    'buggy': '../js/viewport-units-buggyfill',
+    'scriptLocal': '../js/scripts',
+    'switch': '../switchstylesheet/switchstylesheet'
 
   },
   shim: {
@@ -53,43 +53,43 @@ require.config({
       'angular'
     ],
     'switch': [
-    'jquery'
+      'jquery'
     ],
     'skrollr': {
-      deps:['jquery'],
-      exports:'skrollr'
+      deps: ['jquery'],
+      exports: 'skrollr'
     },
-   
-'owl': [
-    'jquery'
+
+    'owl': [
+      'jquery'
     ],
-'scriptLocal': [
-    'jquery'
+    'scriptLocal': [
+      'jquery'
     ],
     'bootstrapHover': [
-    'bootstrap','jquery'
+      'bootstrap', 'jquery'
     ],
     'jqueryValidate': [
-    'jquery'
+      'jquery'
     ],
     'bootstrap': [
-    'jquery'
+      'jquery'
     ],
     'buggy': [
-    'jquery'
+      'jquery'
     ],
     'isotope': [
-    'jquery'
+      'jquery'
     ],
     'easytabs': [
-    'jquery'
+      'jquery'
     ],
     'googleMap': [
-    'jquery'
-    ],
-    'jqueryEasing':{
-      deps: [
       'jquery'
+    ],
+    'jqueryEasing': {
+      deps: [
+        'jquery'
       ],
       exports: 'jqueryEasing'
     },
@@ -104,9 +104,7 @@ require.config({
   priority: [
     'angular'
   ],
-  packages: [
-
-  ]
+  packages: []
 });
 
 //http://code.angularjs.org/1.2.1/docs/guide/bootstrap#overview_deferred-bootstrap
@@ -138,7 +136,7 @@ require([
   'buggy',
   'scriptLocal',
   'switch'
-  
+
 
 
 ], function(angular, app, ngRoutes, ngCookies, ngSanitize, ngResource, ngAnimate, ngTouch) {

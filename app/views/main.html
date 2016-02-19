@@ -1,58 +1,43 @@
-
-
-  <!-- ============================================================= SECTION – HERO ============================================================= -->
-
-
-  <section id="hero">
-	
-    
-    <div data-owl-carousel="" id="owl-main" class="owl-carousel owl-main height-lg owl-inner-nav owl-ui-lg" data-options="">
+<!-- ============================================================= SECTION – HERO ============================================================= -->
+<section id="hero">
+    <div data-owl-carousel=""  id="owl-main" class="owl-carousel owl-main height-lg owl-inner-nav owl-ui-lg inner-bottom" data-options="">
       <div owl-carousel-item="" ng-repeat="item in homeSlider" style="background-image: url({{item.content.src | changepxl:1200}});" class="item">
         <div class="container">
-
+          <div class="caption vertical-center text-center">
+            <div class="fadeInDown-2">
+               <h1 class="fadeInDown-1 dark-color"> </h1>
+            </div><!-- /.fadeIn -->
+          </div><!-- /.caption -->
+        </div><!-- /.container -->
 </section>
-  <section id="hero">
- 
+<section id="her">
     <div id="owl-main1" class="owl-carousel height-lg owl-inner-nav owl-ui-lg">
-
       <div class="item" style="background-image: url(images/art/01.jpg);">
 	{{items.name}}
         <div class="container">
           <div class="caption vertical-center text-center">
-
-           
             <div class="fadeInDown-2">
                <h1 class="fadeInDown-1 dark-color">SKETCHES IN LIGHT {{items.name}} </h1>
             </div><!-- /.fadeIn -->
-
           </div><!-- /.caption -->
         </div><!-- /.container -->
       </div><!-- /.item -->
-
       <div class="item" style="background-image: url(images/art/02.jpg);">
         <div class="container">
-         
         </div>
       </div>
-
       <div class="item" style="background-image: url(images/art/03.jpg);">
         <div class="container">
-          
         </div>
       </div>
-
       <div class="item" style="background-image: url(images/art/04.jpg);">
         <div class="container">
-         
         </div>
       </div>
-
       <div class="item" style="background-image: url(images/art/05.jpg);">
         <div class="container">
-         
         </div>
       </div>
-
     </div><!-- /.owl-carousel -->
   </section>
 
@@ -60,8 +45,7 @@
 
 
   <!-- ============================================================= SECTION – WHO WE ARE ============================================================= -->
-
-  <section id="who-we-are">
+  <section id="about" class="dark-bg  img-bg-softer" style="background-image: url(images/art/pattern-background01.jpg);">
     <div class="container inner-top inner-bottom-sm">
 
       <div class="row">
@@ -83,7 +67,7 @@
 
         <div class="col-md-3 inner-bottom-xs">
           <h2>Passion</h2>
-          <p class="text-small">Magnis modipsae que lib voloratati andigen daepeditem quiate re porem aut labor. Laceaque quiae sitiorem rest non restibusaes maio es dem tumquam core posae volor remped modis volor.</p>
+
         </div><!-- /.col -->
 
         <div class="col-md-1">
@@ -94,7 +78,7 @@
 
         <div class="col-md-3 inner-bottom-xs">
           <h2>Creativity</h2>
-          <p class="text-small">Magnis modipsae que lib voloratati andigen daepeditem quiate re porem aut labor. Laceaque quiae sitiorem rest non restibusaes maio es dem tumquam core posae volor remped modis volor.</p>
+
         </div><!-- /.col -->
 
         <div class="col-md-1">
@@ -105,7 +89,7 @@
 
         <div class="col-md-3 inner-bottom-xs">
           <h2>Quality</h2>
-          <p class="text-small">Magnis modipsae que lib voloratati andigen daepeditem quiate re porem aut labor. Laceaque quiae sitiorem rest non restibusaes maio es dem tumquam core posae volor remped modis volor.</p>
+
         </div><!-- /.col -->
 
       </div><!-- /.row -->
@@ -114,67 +98,252 @@
   </section>
 
   <!-- ============================================================= SECTION – WHO WE ARE : END ============================================================= -->
+  <!-- ============================================================= SECTION – PORTFOLIO ============================================================= -->
+
+  <section id="portfolio" class="light-bg  img-bg-softer" style="background-image: url(images/logobgblack.jpg);">
+    <div class="container inner-top inner-bottom-sm">
+      <div class="row">
+        <div class="col-sm-12 portfolio" onload="commonInit()">
+
+          <ul class="filter text-center">
+            <li><a href="portfolio.html#" data-filter="*" class="active">All</a></li>
+            <li><a href="portfolio.html#" data-filter=".identity">Fasion</a></li>
+            <li><a href="portfolio.html#" data-filter=".interactive">LifeStyle</a></li>
+            <li><a href="portfolio.html#" data-filter=".print">Classic</a></li>
+            <li><a href="portfolio.html#" data-filter=".photography">Photography</a></li>
+          </ul><!-- /.filter -->
+
+          <ul class="items col-3">
+
+            <li class="item thumb interactive">
+              <a href="">
+                <figure>
+                  <figcaption class="text-overlay hidden">
+                    <div class="info">
+                      <h4>Appscreen Dashboard</h4>
+                      <p>Interactive</p>
+                    </div><!-- /.info -->
+                  </figcaption>
+                  <img src="images/portfolio/01.jpg" alt="">
+                </figure>
+              </a>
+            </li><!-- /.item -->
+
+            <li class="item thumb identity">
+              <a href="">
+                <figure>
+                  <figcaption class="text-overlay hidden">
+                    <div class="info">
+                      <h4>Grand Motel</h4>
+                      <p>Identity</p>
+                    </div><!-- /.info -->
+                  </figcaption>
+                  <img src="images/portfolio/02.jpg" alt="">
+                </figure>
+              </a>
+            </li><!-- /.item -->
+
+            <li class="item thumb identity">
+              <a href="">
+                <figure>
+                  <figcaption class="text-overlay hidden">
+                    <div class="info">
+                      <h4>Signwall</h4>
+                      <p>Identity</p>
+                    </div><!-- /.info -->
+                  </figcaption>
+                  <img src="images/portfolio/03.jpg" alt="">
+                </figure>
+              </a>
+            </li><!-- /.item -->
+
+            <li class="item thumb print">
+              <a href="">
+                <figure>
+                  <figcaption class="text-overlay hidden">
+                    <div class="info">
+                      <h4>Modern CD Case</h4>
+                      <p>Print</p>
+                    </div><!-- /.info -->
+                  </figcaption>
+                  <img src="images/portfolio/04.jpg" alt="">
+                </figure>
+              </a>
+            </li><!-- /.item -->
+
+            <li class="item thumb identity">
+              <a href="">
+                <figure>
+                  <figcaption class="text-overlay hidden">
+                    <div class="info">
+                      <h4>Astor & Yancy</h4>
+                      <p>Identity</p>
+                    </div><!-- /.info -->
+                  </figcaption>
+                  <img src="images/portfolio/05.jpg" alt="">
+                </figure>
+              </a>
+            </li><!-- /.item -->
+
+            <li class="item thumb photography">
+              <a href="">
+                <figure>
+                  <figcaption class="text-overlay hidden">
+                    <div class="info">
+                      <h4>Daydreaming</h4>
+                      <p>Photography</p>
+                    </div><!-- /.info -->
+                  </figcaption>
+                  <img src="images/portfolio/06.jpg" alt="">
+                </figure>
+              </a>
+            </li><!-- /.item -->
+
+            <li class="item thumb identity">
+              <a href="">
+                <figure>
+                  <figcaption class="text-overlay hidden">
+                    <div class="info">
+                      <h4>Brand Stationery</h4>
+                      <p>Identity</p>
+                    </div><!-- /.info -->
+                  </figcaption>
+                  <img src="images/portfolio/07.jpg" alt="">
+                </figure>
+              </a>
+            </li><!-- /.item -->
+
+            <li class="item thumb print">
+              <a href="">
+                <figure>
+                  <figcaption class="text-overlay hidden">
+                    <div class="info">
+                      <h4>Tri Fold Brochure</h4>
+                      <p>Print</p>
+                    </div><!-- /.info -->
+                  </figcaption>
+                  <img src="images/portfolio/08.jpg" alt="">
+                </figure>
+              </a>
+            </li><!-- /.item -->
+
+            <li class="item thumb interactive">
+              <a href="">
+                <figure>
+                  <figcaption class="text-overlay hidden">
+                    <div class="info">
+                      <h4>Vintage Bicycles</h4>
+                      <p>Interactive</p>
+                    </div><!-- /.info -->
+                  </figcaption>
+                  <img src="images/portfolio/09.jpg" alt="">
+                </figure>
+              </a>
+            </li><!-- /.item -->
+
+            <li class="item thumb print">
+              <a href="">
+                <figure>
+                  <figcaption class="text-overlay hidden">
+                    <div class="info">
+                      <h4>Electric Dance Book Cover</h4>
+                      <p>Print</p>
+                    </div><!-- /.info -->
+                  </figcaption>
+                  <img src="images/portfolio/10.jpg" alt="">
+                </figure>
+              </a>
+            </li><!-- /.item -->
+
+            <li class="item thumb identity">
+              <a href="">
+                <figure>
+                  <figcaption class="text-overlay hidden">
+                    <div class="info">
+                      <h4>Embroidered</h4>
+                      <p>Identity</p>
+                    </div><!-- /.info -->
+                  </figcaption>
+                  <img src="images/portfolio/11.jpg" alt="">
+                </figure>
+              </a>
+            </li><!-- /.item -->
+
+            <li class="item thumb identity print">
+              <a href="">
+                <figure>
+                  <figcaption class="text-overlay hidden">
+                    <div class="info">
+                      <h4>Brand Stationery</h4>
+                      <p>Identity/Print</p>
+                    </div><!-- /.info -->
+                  </figcaption>
+                  <img src="images/portfolio/12.jpg" alt="">
+                </figure>
+              </a>
+            </li><!-- /.item -->
+
+            <li class="item thumb identity">
+              <a href="">
+                <figure>
+                  <figcaption class="text-overlay hidden">
+                    <div class="info">
+                      <h4>Handmade Wood Gifts</h4>
+                      <p>Identity</p>
+                    </div><!-- /.info -->
+                  </figcaption>
+                  <img src="images/portfolio/13.jpg" alt="">
+                </figure>
+              </a>
+            </li><!-- /.item -->
+
+            <li class="item thumb identity">
+              <a href="">
+                <figure>
+                  <figcaption class="text-overlay hidden">
+                    <div class="info">
+                      <h4>Designer Brand</h4>
+                      <p>Identity</p>
+                    </div><!-- /.info -->
+                  </figcaption>
+                  <img src="images/portfolio/14.jpg" alt="">
+                </figure>
+              </a>
+            </li><!-- /.item -->
+
+            <li class="item thumb print">
+              <a href="">
+                <figure>
+                  <figcaption class="text-overlay hidden">
+                    <div class="info">
+                      <h4>Vinyl Records</h4>
+                      <p>Print</p>
+                    </div><!-- /.info -->
+                  </figcaption>
+                  <img src="images/portfolio/15.jpg" alt="">
+                </figure>
+              </a>
+            </li><!-- /.item -->
+
+          </ul><!-- /.items -->
+
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container -->
+  </section>
+  <!-- ============================================================= SECTION – PORTFOLIO : END ============================================================= -->
 
 
   <!-- ============================================================= SECTION – LATEST WORKS ============================================================= -->
-
   <section id="latest-works" class="light-bg">
-    <div class="container inner">
-
-      <div class="row">
-        <div class="col-md-8 col-sm-9 center-block text-center">
-          <header>
-            <h1>Check out our latest works</h1>
-            <p>Magnis modipsae que voloratati andigen daepeditem quiate re porem aut labor.</p>
-          </header>
-        </div><!-- /.col -->
-      </div><!-- /.row -->
-
-      <div class="row">
-
-        <div class="col-sm-6 inner-top-sm">
-          <figure>
-
-            <div class="icon-overlay icn-link">
-              <a href="portfolio-post.html"><img src="images/latestwrk/13.jpg" alt=""></a>
-            </div><!-- /.icon-overlay -->
-
-            <figcaption class="bordered no-top-border">
-              <div class="info">
-                <h3><a href="portfolio-post.html">Grand Motel gets an identity brushup</a></h3>
-                <p>Identity</p>
-              </div><!-- /.info -->
-            </figcaption>
-
-          </figure>
-        </div><!-- /.col -->
-
-        <div class="col-sm-6 inner-top-sm">
-          <figure>
-
-            <div class="icon-overlay icn-link">
-              <a href="portfolio-post.html"><img src="images/latestwrk/12.jpg" alt=""></a>
-            </div><!-- /.icon-overlay -->
-
-            <figcaption class="bordered no-top-border">
-              <div class="info">
-                <h3><a href="portfolio-post.html">Fresh branding for a creative startup</a></h3>
-                <p>Identity</p>
-              </div><!-- /.info -->
-            </figcaption>
-
-          </figure>
-        </div><!-- /.col -->
-
-      </div><!-- /.row -->
-
+<div class="container col-sm-12 inner-bottom-sm" style="opacity: 0;">
       <div class="row inner-top-sm">
         <div id="owl-latest-works" class="owl-carousel owl-item-gap">
 
           <div class="item">
-            <a href="portfolio-post.html">
+            <a href="">
               <figure>
-                <figcaption class="text-overlay">
+                <figcaption class="text-overlay hidden">
                   <div class="info">
                     <h4>Vintage Bicycles</h4>
                     <p>Interactive</p>
@@ -186,11 +355,39 @@
           </div><!-- /.item -->
 
           <div class="item">
-            <a href="portfolio-post.html">
+            <a href="">
               <figure>
-                <figcaption class="text-overlay">
+                <figcaption class="text-overlay hidden">
                   <div class="info">
                     <h4>Simpli Nota</h4>
+                    <p>Identity</p>
+                  </div><!-- /.info -->
+                </figcaption>
+                <img src="images/latestwrk/02.jpg" alt="">
+              </figure>
+            </a>
+          </div><!-- /.item -->
+
+          <div class="item">
+            <a href="">
+              <figure>
+                <figcaption class="text-overlay hidden">
+                  <div class="info">
+                    <h4>Vinyl Records</h4>
+                    <p>Identity</p>
+                  </div><!-- /.info -->
+                </figcaption>
+                <img src="images/latestwrk/03.jpg" alt="">
+              </figure>
+            </a>
+          </div><!-- /.item -->
+
+          <div class="item">
+            <a href="">
+              <figure>
+                <figcaption class="text-overlay hidden">
+                  <div class="info">
+                    <h4>Astor & Yancy</h4>
                     <p>Identity</p>
                   </div><!-- /.info -->
                 </figcaption>
@@ -200,11 +397,11 @@
           </div><!-- /.item -->
 
           <div class="item">
-            <a href="portfolio-post.html">
+            <a href="">
               <figure>
-                <figcaption class="text-overlay">
+                <figcaption class="text-overlay hidden">
                   <div class="info">
-                    <h4>Vinyl Records</h4>
+                    <h4>Signwall</h4>
                     <p>Identity</p>
                   </div><!-- /.info -->
                 </figcaption>
@@ -214,25 +411,25 @@
           </div><!-- /.item -->
 
           <div class="item">
-            <a href="portfolio-post.html">
+            <a href="">
               <figure>
-                <figcaption class="text-overlay">
+                <figcaption class="text-overlay hidden">
                   <div class="info">
-                    <h4>Astor & Yancy</h4>
-                    <p>Identity</p>
+                    <h4>Tri Fold Brochure</h4>
+                    <p>Print</p>
                   </div><!-- /.info -->
                 </figcaption>
-                <img src="images/latestwrk/11.jpg" alt="">
+                <img src="images/latestwrk/06.jpg" alt="">
               </figure>
             </a>
           </div><!-- /.item -->
 
           <div class="item">
-            <a href="portfolio-post.html">
+            <a href="">
               <figure>
-                <figcaption class="text-overlay">
+                <figcaption class="text-overlay hidden">
                   <div class="info">
-                    <h4>Signwall</h4>
+                    <h4>Embroidered</h4>
                     <p>Identity</p>
                   </div><!-- /.info -->
                 </figcaption>
@@ -242,12 +439,12 @@
           </div><!-- /.item -->
 
           <div class="item">
-            <a href="portfolio-post.html">
+            <a href="">
               <figure>
-                <figcaption class="text-overlay">
+                <figcaption class="text-overlay hidden">
                   <div class="info">
-                    <h4>Tri Fold Brochure</h4>
-                    <p>Print</p>
+                    <h4>El Corcho</h4>
+                    <p>Identity</p>
                   </div><!-- /.info -->
                 </figcaption>
                 <img src="images/latestwrk/08.jpg" alt="">
@@ -256,29 +453,183 @@
           </div><!-- /.item -->
 
           <div class="item">
-            <a href="portfolio-post.html">
+            <a href="">
               <figure>
-                <figcaption class="text-overlay">
+                <figcaption class="text-overlay hidden">
                   <div class="info">
-                    <h4>Embroidered</h4>
+                    <h4>El Corcho</h4>
                     <p>Identity</p>
                   </div><!-- /.info -->
                 </figcaption>
-                <img src="images/latestwrk/06.jpg" alt="">
+                <img src="images/latestwrk/09.jpg" alt="">
               </figure>
             </a>
           </div><!-- /.item -->
 
           <div class="item">
-            <a href="portfolio-post.html">
+            <a href="">
               <figure>
-                <figcaption class="text-overlay">
+                <figcaption class="text-overlay hidden">
                   <div class="info">
                     <h4>El Corcho</h4>
                     <p>Identity</p>
                   </div><!-- /.info -->
                 </figcaption>
                 <img src="images/latestwrk/10.jpg" alt="">
+              </figure>
+            </a>
+          </div><!-- /.item -->
+
+          <div class="item">
+            <a href="">
+              <figure>
+                <figcaption class="text-overlay hidden">
+                  <div class="info">
+                    <h4>El Corcho</h4>
+                    <p>Identity</p>
+                  </div><!-- /.info -->
+                </figcaption>
+                <img src="images/latestwrk/11.jpg" alt="">
+              </figure>
+            </a>
+          </div><!-- /.item -->
+
+          <div class="item">
+            <a href="">
+              <figure>
+                <figcaption class="text-overlay hidden">
+                  <div class="info">
+                    <h4>El Corcho</h4>
+                    <p>Identity</p>
+                  </div><!-- /.info -->
+                </figcaption>
+                <img src="images/latestwrk/12.jpg" alt="">
+              </figure>
+            </a>
+          </div><!-- /.item -->
+
+          <div class="item">
+            <a href="">
+              <figure>
+                <figcaption class="text-overlay hidden">
+                  <div class="info">
+                    <h4>El Corcho</h4>
+                    <p>Identity</p>
+                  </div><!-- /.info -->
+                </figcaption>
+                <img src="images/latestwrk/13.jpg" alt="">
+              </figure>
+            </a>
+          </div><!-- /.item -->
+
+          <div class="item">
+            <a href="">
+              <figure>
+                <figcaption class="text-overlay hidden">
+                  <div class="info">
+                    <h4>El Corcho</h4>
+                    <p>Identity</p>
+                  </div><!-- /.info -->
+                </figcaption>
+                <img src="images/latestwrk/14.jpg" alt="">
+              </figure>
+            </a>
+          </div><!-- /.item -->
+
+          <div class="item">
+            <a href="">
+              <figure>
+                <figcaption class="text-overlay hidden">
+                  <div class="info">
+                    <h4>El Corcho</h4>
+                    <p>Identity</p>
+                  </div><!-- /.info -->
+                </figcaption>
+                <img src="images/latestwrk/15.jpg" alt="">
+              </figure>
+            </a>
+          </div><!-- /.item -->
+
+          <div class="item">
+            <a href="">
+              <figure>
+                <figcaption class="text-overlay hidden">
+                  <div class="info">
+                    <h4>El Corcho</h4>
+                    <p>Identity</p>
+                  </div><!-- /.info -->
+                </figcaption>
+                <img src="images/latestwrk/16.jpg" alt="">
+              </figure>
+            </a>
+          </div><!-- /.item -->
+
+          <div class="item">
+            <a href="">
+              <figure>
+                <figcaption class="text-overlay hidden">
+                  <div class="info">
+                    <h4>El Corcho</h4>
+                    <p>Identity</p>
+                  </div><!-- /.info -->
+                </figcaption>
+                <img src="images/latestwrk/17.jpg" alt="">
+              </figure>
+            </a>
+          </div><!-- /.item -->
+
+          <div class="item">
+            <a href="">
+              <figure>
+                <figcaption class="text-overlay hidden">
+                  <div class="info">
+                    <h4>El Corcho</h4>
+                    <p>Identity</p>
+                  </div><!-- /.info -->
+                </figcaption>
+                <img src="images/latestwrk/18.jpg" alt="">
+              </figure>
+            </a>
+          </div><!-- /.item -->
+
+          <div class="item">
+            <a href="">
+              <figure>
+                <figcaption class="text-overlay hidden">
+                  <div class="info">
+                    <h4>El Corcho</h4>
+                    <p>Identity</p>
+                  </div><!-- /.info -->
+                </figcaption>
+                <img src="images/latestwrk/19.jpg" alt="">
+              </figure>
+            </a>
+          </div><!-- /.item -->
+
+          <div class="item">
+            <a href="">
+              <figure>
+                <figcaption class="text-overlay hidden">
+                  <div class="info">
+                    <h4>El Corcho</h4>
+                    <p>Identity</p>
+                  </div><!-- /.info -->
+                </figcaption>
+                <img src="images/latestwrk/20.jpg" alt="">
+              </figure>
+            </a>
+          </div><!-- /.item -->
+
+          <div class="item">
+            <a href="">
+              <figure>
+                <figcaption class="text-overlay hidden">
+                  <div class="info">
+                    <h4>El Corcho</h4>
+                    <p>Identity</p>
+                  </div><!-- /.info -->
+                </figcaption>
+                <img src="images/latestwrk/21.jpg" alt="">
               </figure>
             </a>
           </div><!-- /.item -->
@@ -292,7 +643,267 @@
   <!-- ============================================================= SECTION – LATEST WORKS : END ============================================================= -->
 
 
-  <!-- ============================================================= SECTION – GET IN TOUCH ============================================================= -->
 
-  
-  <!-- ============================================================= SECTION – GET IN TOUCH : END ============================================================= -->
+  <!-- ============================================================= SECTION – MORE VIDEOS ============================================================= -->
+
+  <section id="more-videos">
+    <div class="container inner-top-md" >
+      <div class="row">
+        <div class="col-sm-12"  id="videos" >
+          <div id="accordion" class="panel-group">
+            <div class="panel panel-default">
+
+              <div class="panel-heading text-center">
+                <h4 class="panel-title">
+                  <a class="panel-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="portfolio-post5.html#content">
+                    <span>More videos</span>
+                  </a>
+                </h4>
+              </div><!-- /.panel-heading -->
+
+              <div id="content" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <div id="owl-videos" class="owl-carousel owl-item-gap">
+
+
+
+                    <div class="item">
+                      <figure>
+
+                        <div class="icon-overlay icn-link">
+                          <a onclick="">
+                                <iframe src="http://www.youtube.com/embed/U8mXZfFkKg4" width="194" height="133" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+                          </a>
+                        </div><!-- /.icon-overlay -->
+
+                        <figcaption class="bordered no-top-border hidden hidden">
+                          <div class="info">
+                            <h4><a href="portfolio-post5.html">Modern CD Case</a></h4>
+                            <p>Print</p>
+                          </div><!-- /.info -->
+                        </figcaption>
+
+                      </figure>
+                    </div><!-- /.item -->
+
+                    <div class="item">
+                      <figure>
+
+                        <div class="icon-overlay icn-link">
+                          <a onclick="">
+                                <iframe src="http://www.youtube.com/embed/_pb89fUMZGg" width="194" height="133" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+                          </a>
+                        </div><!-- /.icon-overlay -->
+
+                        <figcaption class="bordered no-top-border hidden hidden">
+                          <div class="info">
+                            <h4><a href="portfolio-post5.html">Modern CD Case</a></h4>
+                            <p>Print</p>
+                          </div><!-- /.info -->
+                        </figcaption>
+
+                      </figure>
+                    </div><!-- /.item -->
+
+                    <div class="item">
+                      <figure>
+
+                        <div class="icon-overlay icn-link">
+                          <a onclick="">
+                                <iframe src="http://www.youtube.com/embed/aOWf869u5Ak" width="194" height="133" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+                          </a>
+                        </div><!-- /.icon-overlay -->
+
+                        <figcaption class="bordered no-top-border hidden hidden">
+                          <div class="info">
+                            <h4><a href="portfolio-post5.html">Modern CD Case</a></h4>
+                            <p>Print</p>
+                          </div><!-- /.info -->
+                        </figcaption>
+
+                      </figure>
+                    </div><!-- /.item -->
+
+                    <div class="item">
+                      <figure>
+
+                        <div class="icon-overlay icn-link">
+                          <a onclick="">
+                                <iframe src="http://www.youtube.com/embed/_rBxhgaCDIw" width="194" height="133" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+                          </a>
+                        </div><!-- /.icon-overlay -->
+
+                        <figcaption class="bordered no-top-border hidden hidden">
+                          <div class="info">
+                            <h4><a href="portfolio-post5.html">Modern CD Case</a></h4>
+                            <p>Print</p>
+                          </div><!-- /.info -->
+                        </figcaption>
+
+                      </figure>
+                    </div><!-- /.item -->
+
+                    <div class="item">
+                      <figure>
+
+                        <div class="icon-overlay icn-link">
+                          <a onclick="">
+                                <iframe src="http://www.youtube.com/embed/_pb89fUMZGg" width="194" height="133" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+                          </a>
+                        </div><!-- /.icon-overlay -->
+
+                        <figcaption class="bordered no-top-border hidden hidden">
+                          <div class="info">
+                            <h4><a href="portfolio-post5.html">Modern CD Case</a></h4>
+                            <p>Print</p>
+                          </div><!-- /.info -->
+                        </figcaption>
+
+                      </figure>
+                    </div><!-- /.item -->
+
+                    <div class="item">
+                      <figure>
+
+                        <div class="icon-overlay icn-link">
+                          <a onclick="">
+                                <iframe src="http://www.youtube.com/embed/rdoVdFFumJA" width="194" height="133" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+                          </a>
+                        </div><!-- /.icon-overlay -->
+
+                        <figcaption class="bordered no-top-border hidden">
+                          <div class="info">
+                            <h4><a href="portfolio-post5.html">Modern CD Case</a></h4>
+                            <p>Print</p>
+                          </div><!-- /.info -->
+                        </figcaption>
+
+                      </figure>
+                    </div><!-- /.item -->
+
+
+
+
+
+                  </div><!-- /.owl-carousel -->
+                </div><!-- /.panel-body -->
+              </div><!-- /.content -->
+
+            </div><!-- /.panel -->
+          </div><!-- /.accordion -->
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container -->
+  </section>
+
+  <!-- ============================================================= SECTION – MORE VIDEOS : END ============================================================= -->
+
+
+  <!-- ============================================================= SECTION – PORTFOLIO POST ============================================================= -->
+
+  <section id="portfolio-post">
+    <div class="container inner-top-xs inner-bottom">
+
+  <!--  <div class="row">
+        <div class="col-sm-12">
+          <div class="video-container">
+            <iframe src="http://www.youtube.com/embed/h4io7NWX4Qo" width="1170" height="658" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>-->
+
+      <div class="row inner-top-xs reset-xs">
+
+        <div class="col-sm-7 inner-top-xs inner-right-xs">
+          <div class="video-container">
+            <iframe id="videoFrame" src="http://www.youtube.com/embed/h4io7NWX4Qo" width="1170" height="658" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          </div>
+        </div><!-- /.col -->
+
+        <div class="col-sm-4 col-sm-offset-1 outer-top-xs inner-left-xs border-left">
+          <ul class="item-details">
+            <li class="date">June 12, 2014</li>
+            <li class="categories">Wedding Highlights {{videoSelected.vid}}</li>
+            <li class="client">Wedding company</li>
+            <li class="url"><a href="">addictionweddings</a></li>
+          </ul><!-- /.item-details -->
+        </div><!-- /.col -->
+
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+
+  </section>
+
+  <!-- ============================================================= SECTION – PORTFOLIO POST : END ============================================================= -->
+
+
+
+  <!-- ============================================================= SECTION – HERO ============================================================= -->
+
+  <section id="contact" class="dark-bg img-bg img-bg-softer" style="background-image: url(images/logoblack.png);">
+    <div class="container inner-top-md inner-bottom-sm">
+      <div class="row">
+
+        <div class="col-md-8 inner-right inner-bottom-xs">
+          <header>
+            <h1>Get in touch</h1>
+            <p>Do you want to know more? We’d love to hear from you!</p>
+          </header>
+        </div><!-- /.col -->
+
+        <div class="col-md-4">
+          <h3 style="margin-top: 8px;">ADDICTION WEDDINGS</h3>
+          <ul class="contacts">
+
+            <li><i class="icon-mobile contact"></i> +91 963-312-4987</li>
+            <li><a href="mailto:info@addictionweddings.com"><i class="icon-mail-1 contact"></i> info@addictionweddings.com</a></li>
+          </ul><!-- /.contacts -->
+        </div><!-- /.col -->
+
+      </div><!-- ./row -->
+    </div><!-- /.container -->
+  </section>
+
+  <!-- ============================================================= SECTION – HERO : END ============================================================= -->
+
+
+  <!-- ============================================================= SECTION – SHARE ============================================================= -->
+
+  <section id="share" class="light-bg">
+    <div class="container">
+
+      <div class="col-sm-4 reset-padding">
+        <a href="portfolio.html#" class="btn-share-md">
+          <p class="name">Facebook</p>
+          <i class="icon-s-facebook"></i>
+          <p class="counter">1080</p>
+        </a>
+      </div><!-- /.col -->
+
+      <div class="col-sm-4 reset-padding">
+        <a href="portfolio.html#" class="btn-share-md">
+          <p class="name">Twitter</p>
+          <i class="icon-s-twitter"></i>
+          <p class="counter">1263</p>
+        </a>
+      </div><!-- /.col -->
+
+      <div class="col-sm-4 reset-padding">
+        <a href="portfolio.html#" class="btn-share-md">
+          <p class="name">Google +</p>
+          <i class="icon-s-gplus"></i>
+          <p class="counter">963</p>
+        </a>
+      </div><!-- /.col -->
+
+    </div><!-- /.container -->
+  </section>
+
+  <!-- ============================================================= SECTION – SHARE : END ============================================================= -->
