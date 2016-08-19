@@ -8,7 +8,7 @@ define(['angular'], function(angular) {
    * Controller of the protoApp
    */
   angular.module('protoApp.controllers.protfolioCtrl', [])
-    .controller('protfolioCtrl', function($scope) {
+    .controller('protfolioCtrl', function($scope,GoogleAPI) {
       //angular.element(document).ready(commonInit());
       $scope.$on('$viewContentLoaded', function() {
         setTimeout(function() {
@@ -16,7 +16,16 @@ define(['angular'], function(angular) {
         }, 0);
         init();
       });
+
+      GoogleAPI.getPicByAlbumID('6160593634386762673').then(function(data) {
+        //console.log(JSON.stringify(data.feed.entry)+'dfd');
+        $scope.albumItems = data.feed.entry;
+        $scope.albumTitle = data.feed.title.$t;
+
+      });
       function init() {
+
+
         /*===================================================================================*/
         /*	ISOTOPE PORTFOLIO
         /*===================================================================================*/

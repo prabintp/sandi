@@ -46,6 +46,26 @@ define(['angular'], function(angular) {
         return deferred.promise;
 
       };
+
+      var getPicByAlbumID = function(albumid) {
+        var deferred = $q.defer();
+        // Simple GET request example :
+        $http.get('https://picasaweb.google.com/data/feed/api/user/104603570075126715421/albumid/'+albumid+'?alt=json').success(function(data, status, headers, config) {
+          console.log(data + 'success');
+          deferred.resolve(data);
+        //return data;
+        // this callback will be called asynchronously
+        // when the response is available
+        }).error(function(data, status, headers, config) {
+          // called asynchronously if an error occurs
+          // or server returns response with an error status.
+          //return data+"error";
+          deferred.reject(data);
+        });
+        return deferred.promise;
+
+      };
+
       // AngularJS will instantiate a singleton by calling "new" on this function
       return {
         get: function() {
@@ -53,7 +73,11 @@ define(['angular'], function(angular) {
         },
         getHomeSlider: function() {
           return getHomeSlider();
+        },
+        getPicByAlbumID: function(albumid) {
+          return getPicByAlbumID(albumid);
         }
+
       }
 
     });

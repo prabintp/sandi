@@ -1,4 +1,4 @@
-define(['angular', 'skrollr'], function(angular, skrollr) {
+define(['angular', 'skrollr','owlScript'], function(angular, skrollr,owlScript) {
   'use strict';
 
   /**
@@ -21,17 +21,82 @@ define(['angular', 'skrollr'], function(angular, skrollr) {
 
       $scope.videos = "[{vid:'_pb89fUMZGg',eventType:'Wedding Highlights',name:'Megha + Vaishakh',desc:'Megha Vaishakh Wedding Highlights by addiction weddings',eventDate:''},{vid:'daEyFzfF8pk',eventType:'marriage',name:'',desc:'',eventDate:''}]";
       $scope.videoSelected = $scope.videos[1];
+
+
+
       $scope.$on('$viewContentLoaded', function() {
         setTimeout(function() {
           commonInit();
         }, 0);
-
         init(skrollr);
 
 
+        $scope.homeSliderOptions = {
+          autoPlay: 5000,
+          stopOnHover: false,
+          navigation: true,
+          pagination: false,
+          singleItem: true,
+          addClassActive: true,
+          transitionStyle: "fadeUp",
+          navigationText: ["<i class='icon-left-open-mini'></i>", "<i class='icon-right-open-mini'></i>"],
+        afterInit: function() {
+          fadeIn();
+          fadeInDown();
+          fadeInUp();
+          fadeInLeft();
+          fadeInRight();
+        },
+
+        afterMove: function() {
+          fadeIn();
+          fadeInDown();
+          fadeInUp();
+          fadeInLeft();
+          fadeInRight();
+        },
+
+        afterUpdate: function() {
+          fadeIn();
+          fadeInDown();
+          fadeInUp();
+          fadeInLeft();
+          fadeInRight();
+        },
+
+        startDragging: function() {
+          dragging = true;
+        },
+
+        afterAction: function() {
+          fadeInReset();
+          fadeInDownReset();
+          fadeInUpReset();
+          fadeInLeftReset();
+          fadeInRightReset();
+          dragging = false;
+        }
+      };
+
+      $scope.latestSliderOptions = {
+        autoPlay: 5000,
+        stopOnHover: true,
+        navigation: true,
+        pagination: true,
+        rewindNav: true,
+        items: 4,
+        navigationText: ["<i class='icon-left-open-mini'></i>", "<i class='icon-right-open-mini'></i>"]
+      };
+
         GoogleAPI.getHomeSlider().then(function(data) {
           //console.log(JSON.stringify(data.feed.entry)+'dfd');
-          $scope.homeSlider = data.feed.entry;
+       $scope.homeSlider = data.feed.entry;
+
+        });
+
+        GoogleAPI.getPicByAlbumID('6251865698088678481').then(function(data) {
+          //console.log(JSON.stringify(data.feed.entry)+'dfd');
+          $scope.latestSlider = data.feed.entry;
 
         });
 
@@ -113,10 +178,13 @@ define(['angular', 'skrollr'], function(angular, skrollr) {
         /*	OWL CAROUSEL
         /*===================================================================================*/
 
+
+
+
         $(document).ready(function() {
 
           var dragging = true;
-          var owlElementID = "#owl-main34";
+          var owlElementID = "#owl-main";
 
           function fadeInReset() {
             if (!dragging) {
@@ -318,7 +386,7 @@ define(['angular', 'skrollr'], function(angular, skrollr) {
             });
           }
 
-          $(owlElementID).owlCarousel({
+          $("").owlCarousel({
 
             autoPlay: 5000,
             stopOnHover: true,

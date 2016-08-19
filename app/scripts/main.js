@@ -27,6 +27,7 @@ require.config({
     'googleMap': '../js/google.maps.api.v3',
     'buggy': '../js/viewport-units-buggyfill',
     'scriptLocal': '../js/scripts',
+    'owlScript': '../js/owl.scripts',
     'switch': '../switchstylesheet/switchstylesheet'
 
   },

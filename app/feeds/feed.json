@@ -1,0 +1,11 @@
+{
+	"status": "success",
+	"data": {
+		"social": [{
+      "facebookUrl":"fburl",
+      "twitterUrl":"",
+      "googleUrl":""
+      }],
+      "items":"itemd"
+  }
+}

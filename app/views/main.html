@@ -1,6 +1,6 @@
 <!-- ============================================================= SECTION – HERO ============================================================= -->
 <section id="hero">
-    <div data-owl-carousel=""  id="owl-main" class="owl-carousel owl-main height-lg owl-inner-nav owl-ui-lg inner-bottom" data-options="">
+    <div data-owl-carousel="" data-options="homeSliderOptions"  id="owl-main" class="owl-carousel owl-main height-lg owl-inner-nav owl-ui-lg inner-bottom" data-options="">
       <div owl-carousel-item="" ng-repeat="item in homeSlider" style="background-image: url({{item.content.src | changepxl:1200}});" class="item">
         <div class="container">
           <div class="caption vertical-center text-center">
@@ -52,7 +52,7 @@
         <div class="col-md-8 col-sm-9 center-block text-center">
           <header>
             <h1>Wedding Photography</h1>
-            <p>addictionweddings is a professional photography team in Kerala we are creating behind the scenes memories that will last a lifetime. be always sketch its absolute best.</p>
+            <p>Addictionweddings is a professional photography team in Kerala we are creating behind the scenes memories that will last a lifetime. be always sketch its absolute best.</p>
           </header>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -116,7 +116,7 @@
           <ul class="items col-3">
 
             <li class="item thumb interactive">
-              <a href="">
+              <a href="index.html#/protfolio">
                 <figure>
                   <figcaption class="text-overlay hidden">
                     <div class="info">
@@ -334,13 +334,14 @@
   <!-- ============================================================= SECTION – PORTFOLIO : END ============================================================= -->
 
 
+
   <!-- ============================================================= SECTION – LATEST WORKS ============================================================= -->
   <section id="latest-works" class="light-bg">
-<div class="container col-sm-12 inner-bottom-sm" style="opacity: 0;">
+  <div class="container col-sm-12 inner-bottom-sm" style="opacity: 0;">
       <div class="row inner-top-sm">
-        <div id="owl-latest-works" class="owl-carousel owl-item-gap">
+        <div id="owl-latest-works1" data-owl-carouselnormal="" data-options="latestSliderOptions" class="owl-carousel owl-item-gap">
 
-          <div class="item">
+          <div class="item" owl-carousel-item="" ng-repeat="item in latestSlider">
             <a href="">
               <figure>
                 <figcaption class="text-overlay hidden">
@@ -349,290 +350,14 @@
                     <p>Interactive</p>
                   </div><!-- /.info -->
                 </figcaption>
-                <img src="images/latestwrk/01.jpg" alt="">
+                <img src="{{item.content.src}}" alt="">
               </figure>
             </a>
           </div><!-- /.item -->
 
-          <div class="item">
-            <a href="">
-              <figure>
-                <figcaption class="text-overlay hidden">
-                  <div class="info">
-                    <h4>Simpli Nota</h4>
-                    <p>Identity</p>
-                  </div><!-- /.info -->
-                </figcaption>
-                <img src="images/latestwrk/02.jpg" alt="">
-              </figure>
-            </a>
-          </div><!-- /.item -->
 
-          <div class="item">
-            <a href="">
-              <figure>
-                <figcaption class="text-overlay hidden">
-                  <div class="info">
-                    <h4>Vinyl Records</h4>
-                    <p>Identity</p>
-                  </div><!-- /.info -->
-                </figcaption>
-                <img src="images/latestwrk/03.jpg" alt="">
-              </figure>
-            </a>
-          </div><!-- /.item -->
 
-          <div class="item">
-            <a href="">
-              <figure>
-                <figcaption class="text-overlay hidden">
-                  <div class="info">
-                    <h4>Astor & Yancy</h4>
-                    <p>Identity</p>
-                  </div><!-- /.info -->
-                </figcaption>
-                <img src="images/latestwrk/04.jpg" alt="">
-              </figure>
-            </a>
-          </div><!-- /.item -->
 
-          <div class="item">
-            <a href="">
-              <figure>
-                <figcaption class="text-overlay hidden">
-                  <div class="info">
-                    <h4>Signwall</h4>
-                    <p>Identity</p>
-                  </div><!-- /.info -->
-                </figcaption>
-                <img src="images/latestwrk/05.jpg" alt="">
-              </figure>
-            </a>
-          </div><!-- /.item -->
-
-          <div class="item">
-            <a href="">
-              <figure>
-                <figcaption class="text-overlay hidden">
-                  <div class="info">
-                    <h4>Tri Fold Brochure</h4>
-                    <p>Print</p>
-                  </div><!-- /.info -->
-                </figcaption>
-                <img src="images/latestwrk/06.jpg" alt="">
-              </figure>
-            </a>
-          </div><!-- /.item -->
-
-          <div class="item">
-            <a href="">
-              <figure>
-                <figcaption class="text-overlay hidden">
-                  <div class="info">
-                    <h4>Embroidered</h4>
-                    <p>Identity</p>
-                  </div><!-- /.info -->
-                </figcaption>
-                <img src="images/latestwrk/07.jpg" alt="">
-              </figure>
-            </a>
-          </div><!-- /.item -->
-
-          <div class="item">
-            <a href="">
-              <figure>
-                <figcaption class="text-overlay hidden">
-                  <div class="info">
-                    <h4>El Corcho</h4>
-                    <p>Identity</p>
-                  </div><!-- /.info -->
-                </figcaption>
-                <img src="images/latestwrk/08.jpg" alt="">
-              </figure>
-            </a>
-          </div><!-- /.item -->
-
-          <div class="item">
-            <a href="">
-              <figure>
-                <figcaption class="text-overlay hidden">
-                  <div class="info">
-                    <h4>El Corcho</h4>
-                    <p>Identity</p>
-                  </div><!-- /.info -->
-                </figcaption>
-                <img src="images/latestwrk/09.jpg" alt="">
-              </figure>
-            </a>
-          </div><!-- /.item -->
-
-          <div class="item">
-            <a href="">
-              <figure>
-                <figcaption class="text-overlay hidden">
-                  <div class="info">
-                    <h4>El Corcho</h4>
-                    <p>Identity</p>
-                  </div><!-- /.info -->
-                </figcaption>
-                <img src="images/latestwrk/10.jpg" alt="">
-              </figure>
-            </a>
-          </div><!-- /.item -->
-
-          <div class="item">
-            <a href="">
-              <figure>
-                <figcaption class="text-overlay hidden">
-                  <div class="info">
-                    <h4>El Corcho</h4>
-                    <p>Identity</p>
-                  </div><!-- /.info -->
-                </figcaption>
-                <img src="images/latestwrk/11.jpg" alt="">
-              </figure>
-            </a>
-          </div><!-- /.item -->
-
-          <div class="item">
-            <a href="">
-              <figure>
-                <figcaption class="text-overlay hidden">
-                  <div class="info">
-                    <h4>El Corcho</h4>
-                    <p>Identity</p>
-                  </div><!-- /.info -->
-                </figcaption>
-                <img src="images/latestwrk/12.jpg" alt="">
-              </figure>
-            </a>
-          </div><!-- /.item -->
-
-          <div class="item">
-            <a href="">
-              <figure>
-                <figcaption class="text-overlay hidden">
-                  <div class="info">
-                    <h4>El Corcho</h4>
-                    <p>Identity</p>
-                  </div><!-- /.info -->
-                </figcaption>
-                <img src="images/latestwrk/13.jpg" alt="">
-              </figure>
-            </a>
-          </div><!-- /.item -->
-
-          <div class="item">
-            <a href="">
-              <figure>
-                <figcaption class="text-overlay hidden">
-                  <div class="info">
-                    <h4>El Corcho</h4>
-                    <p>Identity</p>
-                  </div><!-- /.info -->
-                </figcaption>
-                <img src="images/latestwrk/14.jpg" alt="">
-              </figure>
-            </a>
-          </div><!-- /.item -->
-
-          <div class="item">
-            <a href="">
-              <figure>
-                <figcaption class="text-overlay hidden">
-                  <div class="info">
-                    <h4>El Corcho</h4>
-                    <p>Identity</p>
-                  </div><!-- /.info -->
-                </figcaption>
-                <img src="images/latestwrk/15.jpg" alt="">
-              </figure>
-            </a>
-          </div><!-- /.item -->
-
-          <div class="item">
-            <a href="">
-              <figure>
-                <figcaption class="text-overlay hidden">
-                  <div class="info">
-                    <h4>El Corcho</h4>
-                    <p>Identity</p>
-                  </div><!-- /.info -->
-                </figcaption>
-                <img src="images/latestwrk/16.JPG" alt="">
-              </figure>
-            </a>
-          </div><!-- /.item -->
-
-          <div class="item">
-            <a href="">
-              <figure>
-                <figcaption class="text-overlay hidden">
-                  <div class="info">
-                    <h4>El Corcho</h4>
-                    <p>Identity</p>
-                  </div><!-- /.info -->
-                </figcaption>
-                <img src="images/latestwrk/17.jpg" alt="">
-              </figure>
-            </a>
-          </div><!-- /.item -->
-
-          <div class="item">
-            <a href="">
-              <figure>
-                <figcaption class="text-overlay hidden">
-                  <div class="info">
-                    <h4>El Corcho</h4>
-                    <p>Identity</p>
-                  </div><!-- /.info -->
-                </figcaption>
-                <img src="images/latestwrk/18.jpg" alt="">
-              </figure>
-            </a>
-          </div><!-- /.item -->
-
-          <div class="item">
-            <a href="">
-              <figure>
-                <figcaption class="text-overlay hidden">
-                  <div class="info">
-                    <h4>El Corcho</h4>
-                    <p>Identity</p>
-                  </div><!-- /.info -->
-                </figcaption>
-                <img src="images/latestwrk/19.jpg" alt="">
-              </figure>
-            </a>
-          </div><!-- /.item -->
-
-          <div class="item">
-            <a href="">
-              <figure>
-                <figcaption class="text-overlay hidden">
-                  <div class="info">
-                    <h4>El Corcho</h4>
-                    <p>Identity</p>
-                  </div><!-- /.info -->
-                </figcaption>
-                <img src="images/latestwrk/20.jpg" alt="">
-              </figure>
-            </a>
-          </div><!-- /.item -->
-
-          <div class="item">
-            <a href="">
-              <figure>
-                <figcaption class="text-overlay hidden">
-                  <div class="info">
-                    <h4>El Corcho</h4>
-                    <p>Identity</p>
-                  </div><!-- /.info -->
-                </figcaption>
-                <img src="images/latestwrk/21.jpg" alt="">
-              </figure>
-            </a>
-          </div><!-- /.item -->
 
         </div><!-- /.owl-carousel -->
       </div><!-- /.row -->
@@ -641,6 +366,7 @@
   </section>
 
   <!-- ============================================================= SECTION – LATEST WORKS : END ============================================================= -->
+
 
 
 
