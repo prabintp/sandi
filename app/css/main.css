@@ -126,6 +126,9 @@ h6 {
 }
 
 main [class*="col-"] {
+/*	opacity: 0;*/
+}
+.animte [class*="col-"] {
 	opacity: 0;
 }
 
@@ -5833,4 +5836,8 @@ a.changecolor {
 	300 {
 		max-height: 20px;
 	}
+}
+
+.not-visible {
+  visibility: hidden;
 }

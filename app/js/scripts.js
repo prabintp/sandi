@@ -2,12 +2,10 @@ function commonInit() {
   $(document).ready(function() {
     console.log('enter common init');
     //...show animated items
-    var waypointClass = 'main [class*="col-"]';
+    var waypointClass = '.animte [class*="col-"]';
     var animationClass = 'fadeInUp';
     var delayTime;
-    $(waypointClass).css({
-      opacity: '0'
-    });
+
     $(waypointClass).waypoint(function() {
       delayTime += 100;
       $(this).delay(delayTime).queue(function(next) {

@@ -1,7 +1,7 @@
 <!-- ============================================================= SECTION – HERO ============================================================= -->
-<section id="hero">
-    <div data-owl-carousel="" data-options="homeSliderOptions"  id="owl-main" class="owl-carousel owl-main height-lg owl-inner-nav owl-ui-lg inner-bottom" data-options="">
-      <div owl-carousel-item="" ng-repeat="item in homeSlider" style="background-image: url({{item.content.src | changepxl:1200}});" class="item">
+<section id="hero" style="min-height:650px">
+    <div  data-owl-carousel="" data-options="homeSliderOptions"  id="owl-main" class="owl-carousel owl-main height-lg owl-inner-nav owl-ui-lg inner-bottom" data-options="">
+      <div owl-carousel-item=""  ng-repeat="item in homeSlider" style="background-image: url({{item.content.src | changepxl:1200}});" class="item">
         <div class="container">
           <div class="caption vertical-center text-center">
             <div class="fadeInDown-2">
@@ -45,7 +45,7 @@
 
 
   <!-- ============================================================= SECTION – WHO WE ARE ============================================================= -->
-  <section id="about" class="dark-bg  img-bg-softer" style="background-image: url(images/art/pattern-background01.jpg);">
+  <section id="about" class="dark-bg  img-bg-softer animte" style="background-image: url(images/art/pattern-background01.jpg);">
     <div class="container inner-top inner-bottom-sm">
 
       <div class="row">
@@ -65,18 +65,18 @@
           </div><!-- /.icon -->
         </div><!-- /.col -->
 
-        <div class="col-md-3 inner-bottom-xs">
+        <div class="col-md-3 inner-bottom-xs wayfect">
           <h2>Passion</h2>
 
         </div><!-- /.col -->
 
-        <div class="col-md-1">
+        <div class="col-md-1 wayfect">
           <div class="icon pull-right">
             <i class="icon-lamp icn"></i>
           </div><!-- /.icon -->
         </div><!-- /.col -->
 
-        <div class="col-md-3 inner-bottom-xs">
+        <div class="col-md-3 inner-bottom-xs wayfect">
           <h2>Creativity</h2>
 
         </div><!-- /.col -->
@@ -87,7 +87,7 @@
           </div><!-- /.icon -->
         </div><!-- /.col -->
 
-        <div class="col-md-3 inner-bottom-xs">
+        <div class="col-md-3 inner-bottom-xs wayfect">
           <h2>Quality</h2>
 
         </div><!-- /.col -->
@@ -100,10 +100,10 @@
   <!-- ============================================================= SECTION – WHO WE ARE : END ============================================================= -->
   <!-- ============================================================= SECTION – PORTFOLIO ============================================================= -->
 
-  <section id="portfolio" class="light-bg  img-bg-softer" style="background-image: url(images/logobgblack.jpg);">
+  <section id="portfolio" class="light-bg  img-bg-softer animte" style="background-image: url(images/logobgblack.jpg);">
     <div class="container inner-top inner-bottom-sm">
       <div class="row">
-        <div class="col-sm-12 portfolio" onload="commonInit()">
+        <div class="col-sm-12 portfolio wayfect" onload="commonInit()">
 
           <ul class="filter text-center">
             <li><a href="portfolio.html#" data-filter="*" class="active">All</a></li>
@@ -336,8 +336,8 @@
 
 
   <!-- ============================================================= SECTION – LATEST WORKS ============================================================= -->
-  <section id="latest-works" class="light-bg">
-  <div class="container col-sm-12 inner-bottom-sm" style="opacity: 0;">
+  <section id="latest-works" class="light-bg animte">
+  <div class="container col-sm-12 inner-bottom-sm">
       <div class="row inner-top-sm">
         <div id="owl-latest-works1" data-owl-carouselnormal="" data-options="latestSliderOptions" class="owl-carousel owl-item-gap">
 
@@ -372,7 +372,7 @@
 
   <!-- ============================================================= SECTION – MORE VIDEOS ============================================================= -->
 
-  <section id="more-videos">
+  <section id="more-videos" class="animte">
     <div class="container inner-top-md" >
       <div class="row">
         <div class="col-sm-12"  id="videos" >
@@ -533,7 +533,7 @@
 
   <!-- ============================================================= SECTION – PORTFOLIO POST ============================================================= -->
 
-  <section id="portfolio-post">
+  <section id="portfolio-post" class="animte">
     <div class="container inner-top-xs inner-bottom">
 
   <!--  <div class="row">
@@ -573,11 +573,11 @@
 
   <!-- ============================================================= SECTION – HERO ============================================================= -->
 
-  <section id="contact" class="dark-bg img-bg img-bg-softer" style="background-image: url(images/logoblack.png);">
+  <section id="contact" class="dark-bg img-bg img-bg-softer animte" style="background-image: url(images/logoblack.png);">
     <div class="container inner-top-md inner-bottom-sm">
       <div class="row">
 
-        <div class="col-md-8 inner-right inner-bottom-xs">
+        <div class="col-md-8 inner-right inner-bottom-xs wayfect">
           <header>
             <h1>Get in touch</h1>
             <p>Do you want to know more? We’d love to hear from you!</p>
@@ -602,10 +602,11 @@
 
   <!-- ============================================================= SECTION – SHARE ============================================================= -->
 
-  <section id="share" class="light-bg">
+  <section id="share" class="light-bg animte">
     <div class="container">
 
-      <div class="col-sm-4 reset-padding">
+      <div class="col-sm-4 reset-padding" when-visible="animateElementIn"
+        when-not-visible="animateElementOut" >
         <a href="portfolio.html#" class="btn-share-md">
           <p class="name">Facebook</p>
           <i class="icon-s-facebook"></i>
@@ -613,7 +614,8 @@
         </a>
       </div><!-- /.col -->
 
-      <div class="col-sm-4 reset-padding">
+      <div class="col-sm-4 reset-padding" when-visible="animateElementIn"
+        when-not-visible="animateElementOut" >
         <a href="portfolio.html#" class="btn-share-md">
           <p class="name">Twitter</p>
           <i class="icon-s-twitter"></i>
@@ -621,7 +623,8 @@
         </a>
       </div><!-- /.col -->
 
-      <div class="col-sm-4 reset-padding">
+      <div class="col-sm-4 reset-padding" when-visible="animateElementIn"
+        when-not-visible="animateElementOut" >
         <a href="portfolio.html#" class="btn-share-md">
           <p class="name">Google +</p>
           <i class="icon-s-gplus"></i>

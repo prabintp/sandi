@@ -23,6 +23,17 @@ define(['angular'], function(angular) {
         $scope.albumTitle = data.feed.title.$t;
 
       });
+
+
+      $scope.animateElementIn = function($el) {
+          $el.removeClass('hidden');
+          $el.addClass('animated fadeInUp'); // this example leverages animate.css classes
+};
+
+$scope.animateElementOut = function($el) {
+      //  $el.addClass('hidden');
+        $el.removeClass('animated fadeInUp'); // this example leverages animate.css classes
+};
       function init() {
 
 

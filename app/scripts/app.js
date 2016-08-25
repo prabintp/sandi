@@ -23,7 +23,8 @@ define(['angular', 'controllers/main', 'controllers/about', 'controllers/protfol
       'ngSanitize',
       'ngRoute',
       'ngAnimate',
-      'ngTouch'
+      'ngTouch',
+      'angular-scroll-animate'
 
     ])
     .config(function($routeProvider) {

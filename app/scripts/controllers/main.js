@@ -100,6 +100,15 @@ define(['angular', 'skrollr','owlScript'], function(angular, skrollr,owlScript) 
 
         });
 
+        $scope.animateElementIn = function($el) {
+            $el.removeClass('hidden');
+            $el.addClass('animated fadeInUp'); // this example leverages animate.css classes
+  };
+
+  $scope.animateElementOut = function($el) {
+        //  $el.addClass('hidden');
+          $el.removeClass('animated fadeInUp'); // this example leverages animate.css classes
+  };
 
         $scope.items1 = [1, 2, 3, 4, 5];
         $scope.items2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];

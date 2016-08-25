@@ -28,7 +28,8 @@ require.config({
     'buggy': '../js/viewport-units-buggyfill',
     'scriptLocal': '../js/scripts',
     'owlScript': '../js/owl.scripts',
-    'switch': '../switchstylesheet/switchstylesheet'
+    'switch': '../switchstylesheet/switchstylesheet',
+    'angularScroll': '../../bower_components/angular-scroll-animate/dist/angular-scroll-animate'
 
   },
   shim: {
@@ -51,6 +52,9 @@ require.config({
       'angular'
     ],
     'angular-touch': [
+      'angular'
+    ],
+    'angularScroll': [
       'angular'
     ],
     'switch': [
@@ -136,7 +140,8 @@ require([
   'googleMap',
   'buggy',
   'scriptLocal',
-  'switch'
+  'switch',
+  'angularScroll'
 
 
 

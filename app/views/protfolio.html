@@ -1,18 +1,18 @@
 
-<main>
+<main way-point>
 
 
     <section  class="light-bg">
       <div class="container">
               <div class="row">
-                <div class="col-md-4 col-sm-6 center-block text-center">
+                <div class="col-md-4 col-sm-6 center-block text-center wayfect">
                   <figure class="post-media">
                     <a href="blog-post.html"><span class="icn-more"></span><img width="50%" src="images/logoblacktrue.png" alt=""></a>
                   </figure>
               </div><!-- /.col -->
-              <div class="col-sm-10 center-block text-center">
+              <div class="col-sm-10 center-block text-center wayfect">
 							<header>
-								<h1>{{albumTitle}}digital creatives</h1>
+								<h1>{{albumTitle}}</h1>
 							</header>
 						</div>
             </div><!-- /.row -->
@@ -21,11 +21,12 @@
 
   <!-- ============================================================= SECTION – PORTFOLIO ============================================================= -->
 
-  <section  class="light-bg" ng-repeat="item in albumItems">
+  <section  class="light-bg" ng-repeat="item in albumItems" when-visible="animateElementIn"
+    when-not-visible="animateElementOut"  >
     <div class="container inner-bottom">
   					<div class="row">
-  						<div class="col-sm-12 ">
-                <figure class="post-media col-3">
+  						<div class="col-sm-12 wayfect" >
+                <figure class="post-media   ">
                   <a href="blog-post.html"><span class="icn-more"></span><img src="{{item.content.src}}" alt=""></a>
                 </figure>
   					</div><!-- /.col -->
@@ -33,103 +34,6 @@
   		</div>
     </section>
 
-    <section  class="light-bg">
-      <div class="container inner-bottom">
-              <div class="row">
-                <div class="col-sm-12 ">
-                  <figure class="post-media col-3">
-                    <a href="blog-post.html"><span class="icn-more"></span><img src="images/portfolio/03.jpg" alt=""></a>
-                  </figure>
-
-
-              </div><!-- /.col -->
-            </div><!-- /.row -->
-        </div>
-      </section>
-
-      <section  class="light-bg">
-        <div class="container inner-bottom">
-                <div class="row">
-                  <div class="col-sm-12 ">
-                    <figure class="post-media col-3">
-                      <a href="blog-post.html"><span class="icn-more"></span><img src="images/portfolio/09.jpg" alt=""></a>
-                    </figure>
-
-
-                </div><!-- /.col -->
-              </div><!-- /.row -->
-          </div>
-        </section>
-
-        <section  class="light-bg">
-          <div class="container inner-bottom">
-                  <div class="row">
-                    <div class="col-sm-12 ">
-                      <figure class="post-media col-3">
-                        <a href="blog-post.html"><span class="icn-more"></span><img src="images/portfolio/08.jpg" alt=""></a>
-                      </figure>
-
-
-                  </div><!-- /.col -->
-                </div><!-- /.row -->
-            </div>
-          </section>
-
-          <section  class="light-bg">
-            <div class="container inner-bottom">
-                    <div class="row">
-                      <div class="col-sm-12 ">
-                        <figure class="post-media col-3">
-                          <a href="blog-post.html"><span class="icn-more"></span><img src="images/portfolio/08.jpg" alt=""></a>
-                        </figure>
-
-
-                    </div><!-- /.col -->
-                  </div><!-- /.row -->
-              </div>
-            </section>
-
-            <section  class="light-bg">
-              <div class="container inner-bottom">
-                      <div class="row">
-                        <div class="col-sm-12 ">
-                          <figure class="post-media col-3">
-                            <a href="blog-post.html"><span class="icn-more"></span><img src="images/portfolio/07.jpg" alt=""></a>
-                          </figure>
-
-
-                      </div><!-- /.col -->
-                    </div><!-- /.row -->
-                </div>
-              </section>
-
-              <section  class="light-bg">
-                <div class="container inner-bottom">
-                        <div class="row">
-                          <div class="col-sm-12 ">
-                            <figure class="post-media col-3">
-                              <a href="blog-post.html"><span class="icn-more"></span><img src="images/portfolio/06.jpg" alt=""></a>
-                            </figure>
-
-
-                        </div><!-- /.col -->
-                      </div><!-- /.row -->
-                  </div>
-                </section>
-
-                <section  class="light-bg">
-                  <div class="container inner-bottom">
-                          <div class="row">
-                            <div class="col-sm-12 ">
-                              <figure class="post-media col-3">
-                                <a href="blog-post.html"><span class="icn-more"></span><img src="images/portfolio/05.jpg" alt=""></a>
-                              </figure>
-
-
-                          </div><!-- /.col -->
-                        </div><!-- /.row -->
-                    </div>
-                  </section>
 
   <!-- ============================================================= SECTION – SHARE : END ============================================================= -->
 
