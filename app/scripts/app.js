@@ -24,7 +24,8 @@ define(['angular', 'controllers/main', 'controllers/about', 'controllers/protfol
       'ngRoute',
       'ngAnimate',
       'ngTouch',
-      'angular-scroll-animate'
+      'angular-scroll-animate',
+      'iso.directives'
 
     ])
     .config(function($routeProvider) {

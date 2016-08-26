@@ -28,6 +28,7 @@ require.config({
     'buggy': '../js/viewport-units-buggyfill',
     'scriptLocal': '../js/scripts',
     'owlScript': '../js/owl.scripts',
+    'angulariso': '../js/angular-isotope',
     'switch': '../switchstylesheet/switchstylesheet',
     'angularScroll': '../../bower_components/angular-scroll-animate/dist/angular-scroll-animate'
 
@@ -55,6 +56,9 @@ require.config({
       'angular'
     ],
     'angularScroll': [
+      'angular'
+    ],
+    'angulariso': [
       'angular'
     ],
     'switch': [
@@ -141,7 +145,8 @@ require([
   'buggy',
   'scriptLocal',
   'switch',
-  'angularScroll'
+  'angularScroll',
+  'angulariso'
 
 
 
