@@ -1345,7 +1345,7 @@ aside .thumb figure {
 }
 .navbar-collapse {
     position: relative;
-    background-color: #000;
+   background-color: #fff;
 	width: 100%;
 /*	padding-top: 30px;8*/
 	padding-bottom: 30px;
